@@ -1,0 +1,105 @@
+.app__greeting {
+    width: 100%;
+    min-height: 100vh;
+    height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.greeting__textBox {
+    width: 312px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.greeting__hintBox {
+    width: 312px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.greeting__accent {
+    color: #F0DB4F;
+}
+
+.textBox__wrapper {
+    margin-bottom: 48px;
+}
+
+.greeting__graph {
+    width: 312px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.graph__doughnut {
+    position: relative;
+    width: 312px;
+    height: 312px;
+}
+
+.doughnut__heading {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    font-family: Teko;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.doughnut__bigHeading {
+    font-size: 32px;
+}
+
+.doughnut__headingWrapper {
+    width: 100%;
+}
+
+.doughnut__option {
+    position: absolute;
+}
+
+.doughnut__optionLogo {
+    display: flex;
+    width: 100px;
+    margin-bottom: 5px;
+}
+
+.doughnut__optionLogoContent {
+    width: 32px !important;
+    text-align: center;
+}
+
+.doughnut__optionLogoWrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.doughnut__optionLogoContent {
+    width: 32px;
+    font-size: 32px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.doughnut__optionName {
+    width: 100px;
+    font-size: 24px;
+    text-align: center;
+}
