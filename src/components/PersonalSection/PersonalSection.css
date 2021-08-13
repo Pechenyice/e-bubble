@@ -1,0 +1,34 @@
+.app__personal {
+    height: 100vh;    
+}
+
+.personal__awesomeBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #23D4AD;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity .2s;
+    animation: backgrounder 15s linear 0s infinite alternate;
+}
+
+@keyframes backgrounder {
+    0% {
+        background: #23D4AD;
+    }
+
+    25% {
+        background: #23A6D5;
+    }
+
+    75% {
+        background: #E73C7E;
+    }
+
+    100% {
+        background: #EE7752;
+    }
+}
