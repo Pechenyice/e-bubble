@@ -1,9 +1,66 @@
-import React from "react";
+import React, {useState} from "react";
 import './GreetingSection.css';
 import GreetingTextBox from './GreetingTextBox';
 import DoughnutList from "./DoughnutList";
+import GreetingTechHint from "./GreetingTechHint";
+import GreetingIsometricContext from "./GreetingIsometricContext";
 
 function GreetingSection() {
+
+    let [dreams, setDreams] = useState({
+        techs: [
+            {
+                tech: 'JavaScript',
+                text: <p className='hintBox__text'>Started learning JS <span className='greeting__accent'>3 years</span> ago. Now I am confidently writing <span className='greeting__accent'>"vanilla" JS</span> and starting look for suitable framework</p>,
+                display: false
+            },
+            {
+                tech: 'React',
+                text: <p className='hintBox__text'>This <span className='greeting__accent'>page is written with React</span>! Now it is <span className='greeting__accent'>my main choice</span> between JS frameworks</p>,
+                display: false
+            },
+            {
+                tech: 'Node.js',
+                text: <p className='hintBox__text'>Awesome runtime. <span className='greeting__accent'>2 of 3 years use this platform</span> for all fullstack projects</p>,
+                display: false
+            },
+            {
+                tech: 'HTML+CSS',
+                text: <p className='hintBox__text'>Nothing interesting. Markup language and styles sheet are web base. Trying to be modern for <span className='greeting__accent'>5 years</span> in a row</p>,
+                display: false
+            },
+            {
+                tech: 'Electron.js',
+                text: <p className='hintBox__text'>Very <span className='greeting__accent'>interesting for me</span> framework. I don't think it is useful for me every day, but it <span className='greeting__accent'>makes writing desktops fun and easy</span></p>,
+                display: false
+            },
+            {
+                tech: 'Figma',
+                text: <p className='hintBox__text'>Look at this <span className='greeting__accent'><span className='greeting__accentJoke'>pretty</span> design</span>. I think Figma will want to disown it, but it is <span className='greeting__accent'>created in this tool</span></p>,
+                display: false
+            },
+            {
+                tech: 'SQL/NoSQL',
+                text: <p className='hintBox__text'>select * from knowings;<br/><span className='greeting__accent'>Empty set</span> (0.00 sec)<br/><br/>Oh...</p>,
+                display: false
+            },
+            {
+                tech: 'Git',
+                text: <p className='hintBox__text'>init -{'>'} remote -{'>'}  add -{'>'}  commit -{'>'} push <br/><br/> Not all, but <span className='greeting__accent'>99%</span> ;)</p>,
+                display: false
+            }
+        ]
+    });
+
+    function handleDoughnutIconHover(name) {
+        let newDreams = dreams.techs.map(t => t.tech === name ? {tech: t.tech, text: t.text, display: true} : t);
+        setDreams({techs: newDreams});
+    }
+
+    function handleDoughnutIconLeave(name) {
+        let newDreams = dreams.techs.map(t => t.tech === name ? {tech: t.tech, text: t.text, display: false} : t);
+        setDreams({techs: newDreams});
+    }
 
     return (
         <section className='app__greeting greeting'>
@@ -26,7 +83,7 @@ function GreetingSection() {
 
                     <GreetingTextBox 
                         heading={'Social'}
-                        text='test'
+                        text={<GreetingIsometricContext />}
                     />
 
                 </div>
@@ -38,7 +95,13 @@ function GreetingSection() {
 
                 <div className='graph__doughnut doughnut'>
 
-                    <DoughnutList />
+                    <h1 className='doughnut__heading'>
+                        <span className='doughnut__headingWrapper'>
+                            Hello, I’m<br/><span className='greeting__accent doughnut__bigHeading'>German Iskhakov</span><br/>the<br/><span className='greeting__accent'>web developer</span>
+                        </span>
+                    </h1>
+
+                    <DoughnutList onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave}/>
                     
                     <svg width="312" height="313" viewBox="0 0 312 313" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fillRule="evenodd" clipRule="evenodd" d="M17 85.1854C31.4126 57.1132 54.0879 33.9811 81.8145 19L106.834 62.3356C86.6694 72.8746 70.3174 89.7117 60.3887 110.236L17 85.1854Z" fill="#F1502F"/>
@@ -51,17 +114,17 @@ function GreetingSection() {
                         <path fillRule="evenodd" clipRule="evenodd" d="M250.899 107.732C240.857 87.8642 224.745 71.5871 205 61.3393L230.022 18C257.331 32.687 279.761 55.2731 294.254 82.7007L250.899 107.732Z" fill="#61DBFB"/>
                     </svg>
 
-                    <h1 className='doughnut__heading'>
-                        <span className='doughnut__headingWrapper'>
-                            Hello, I’m<br/><span className='greeting__accent doughnut__bigHeading'>German Iskhakov</span><br/>the<br/><span className='greeting__accent'>web developer</span>
-                        </span>
-                    </h1>
+                    
 
                 </div>
 
             </div>
 
             <div className='greeting__hintBox hintBox'>
+
+                {
+                    dreams.techs.map((t, i) => <GreetingTechHint key={i} name={t.tech} text={t.text} opacity={t.display ? 1 : 0}/>)
+                }
 
             </div>
 

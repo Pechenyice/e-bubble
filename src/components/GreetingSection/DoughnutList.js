@@ -3,7 +3,7 @@ import DoughnutOption from "./DoughnutOption";
 import { faCss3Alt, faFigma, faGitAlt, faHtml5, faJsSquare, faNodeJs, faReact } from '@fortawesome/free-brands-svg-icons';
 import { faAtom, faDatabase } from "@fortawesome/free-solid-svg-icons";
 
-function DoughnutList() {
+function DoughnutList({onHover, onLeave}) {
 
     return (
         <div>
@@ -16,6 +16,8 @@ function DoughnutList() {
                     top: '-80px',
                     left: 'calc(50% - 50px)'
                 }}
+                onHover={onHover}
+                onLeave={onLeave}
             />
 
             <DoughnutOption
@@ -26,6 +28,8 @@ function DoughnutList() {
                     top: '-25px',
                     left: 'calc(100% - 55px)'
                 }}
+                onHover={onHover}
+                onLeave={onLeave}
             />
 
             <DoughnutOption
@@ -36,6 +40,8 @@ function DoughnutList() {
                     top: '125px',
                     left: 'calc(100%)'
                 }}
+                onHover={onHover}
+                onLeave={onLeave}
             />
 
             <DoughnutOption
@@ -48,6 +54,8 @@ function DoughnutList() {
                     bottom: '-25px',
                     left: 'calc(100% - 55px)'
                 }}
+                onHover={onHover}
+                onLeave={onLeave}
             />
 
             <DoughnutOption
@@ -58,6 +66,8 @@ function DoughnutList() {
                     bottom: '-85px',
                     left: 'calc(50% - 50px)'
                 }}
+                onHover={onHover}
+                onLeave={onLeave}
             />
 
             <DoughnutOption
@@ -68,6 +78,8 @@ function DoughnutList() {
                     top: '-25px',
                     right: 'calc(100% - 55px)'
                 }}
+                onHover={onHover}
+                onLeave={onLeave}
             />
 
             <DoughnutOption
@@ -78,6 +90,8 @@ function DoughnutList() {
                     top: '125px',
                     right: 'calc(100%)'
                 }}
+                onHover={onHover}
+                onLeave={onLeave}
             />
 
             <DoughnutOption
@@ -88,6 +102,8 @@ function DoughnutList() {
                     bottom: '-25px',
                     right: 'calc(100% - 55px)'
                 }}
+                onHover={onHover}
+                onLeave={onLeave}
             />
 
         </div>
