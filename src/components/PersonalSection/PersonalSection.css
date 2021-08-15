@@ -200,9 +200,11 @@
 }
 
 .isometric__skill {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
 }
 
 .isometric__skillRatingWrapper {
@@ -253,6 +255,22 @@
 .isometric__skillRating_active::before, .isometric__skillRating_active::after {
     background: #F0DB4F;
     filter: brightness(.5);
+}
+
+.isometric__skillAnim {
+    position: absolute;
+    top: 18px;
+    font-size: 18px;
+    /* font-weight: bold; */
+    opacity: 0;
+    transition: .5s;
+    height: 100%;
+    line-height: 100%;
+}
+
+.isometric__skill:hover .isometric__skillAnim {
+    opacity: 1;
+    transition: .5s;
 }
 
 @keyframes backgrounder {

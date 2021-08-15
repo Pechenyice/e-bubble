@@ -48,6 +48,7 @@ function PersonalIsometricPlayground() {
                                     <PersonalSkillRating name='React' rating={3}/>
                                     <PersonalSkillRating name='Node.js' rating={4}/>
                                     <PersonalSkillRating name='Electron.js' rating={3}/>
+                                    <PersonalSkillRating name='HTML and CSS' rating={5}/>
                                     <PersonalSkillRating name='Rest API' rating={5}/>
                                     <PersonalSkillRating name='SQL' rating={4}/>
                                     <PersonalSkillRating name='NoSQL' rating={1}/>
@@ -61,6 +62,8 @@ function PersonalIsometricPlayground() {
                 </div>
 
             </div>
+
+
 
             <div className='personal__textBox textBox'>
 
