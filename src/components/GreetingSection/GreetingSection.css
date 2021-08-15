@@ -9,13 +9,6 @@
     flex-wrap: wrap;
 }
 
-.greeting__textBox {
-    width: 312px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-
 .greeting__hintBox {
     position: relative;
     width: 312px;
@@ -37,7 +30,8 @@
 }
 
 .greeting__graph {
-    width: 312px;
+    position: relative;
+    width: 531px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -45,8 +39,8 @@
 
 .graph__doughnut {
     position: relative;
-    width: 312px;
-    height: 312px;
+    width: 100%;
+    height: 531px;
 }
 
 .doughnut__heading {
@@ -58,17 +52,18 @@
     font-family: Teko;
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
+    font-size: 24px;
     text-align: center;
     letter-spacing: 0.03em;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
+    pointer-events: none;
 }
 
 .doughnut__bigHeading {
-    font-size: 32px;
+    font-size: 56px;
 }
 
 .doughnut__headingWrapper {
@@ -77,6 +72,7 @@
 
 .doughnut__option {
     position: absolute;
+    cursor: pointer;
 }
 
 .doughnut__optionLogo {
@@ -86,13 +82,14 @@
 }
 
 .svgTechIcon{
-    transition: .2s;
-    cursor: pointer;
+    transition: .5s;
+    transition-delay: 0s;
 }
 
-.svgTechIcon:hover{
+.svgTechIcon_chosen {
     filter: drop-shadow(0px 0px 5px);
-    transition: .2s;
+    transition-delay: 0s;
+    transition: .5s;
 }
 
 .doughnut__optionLogoContent {
@@ -113,20 +110,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .5s;
+    opacity: .3;
 }
 
 .doughnut__optionName {
     width: 100px;
     font-size: 24px;
     text-align: center;
+    opacity: .3;
+    transition: .5s;
+}
+
+.doughnut__optionName_chosen {
+    opacity: 1;
+    transition: .5s;
 }
 
 .hintBox__hint {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
+    width: 312px;
+    height: max-content;
+    /* top: 0;
+    left: 0; */
     font-family: 'Indie Flower', cursive;
     font-size: 24px;
     transition: .2s;
@@ -136,10 +142,20 @@
     animation: shaker 5s linear 0s infinite alternate;
     display: flex;
     align-items: center;
+    text-indent: -20px;
+}
+
+/* .doughnut__optionAnimation {
+    animation: shaker 5s linear 0s infinite alternate;
+} */
+
+.hintBox__text {
+    position: absolute;
 }
 
 .textBox__isometric {
-    height: 200px;
+    /* height: 200px; */
+    margin-top: 90px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -150,7 +166,7 @@
     display: block;
     width: 80px;
     height: 100px;
-    transform: perspective(1000px) rotateX(15deg) skewY(-15deg);
+    /* transform: perspective(1000px) rotateX(15deg) skewY(-15deg); */
     text-decoration: none;
     color: #242424;
 }
@@ -175,7 +191,7 @@
 }
 
 .isometric__link {
-    margin: 0 20px;
+    margin: 0 25px;
 }
 
 .isometric__linkName {
@@ -211,6 +227,11 @@
     width: 100%;
     background: var(--pseudoColor);
     transform: skewX(45deg) translate(10px, -20px);
+}
+
+.graph__cell {
+    transition: .5s;
+    cursor: pointer;
 }
 
 @keyframes shaker {
