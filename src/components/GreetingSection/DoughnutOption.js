@@ -33,9 +33,7 @@ function DoughnutOption({dreams, icon, addIcon=null, name, color, addColor=null,
                 </div>
             </div>
 
-            <div className='doughnut__optionName' style={{opacity: isActive ? '1' : '.3'}}>
-                {name}
-            </div>
+            
         </div>
     );
 

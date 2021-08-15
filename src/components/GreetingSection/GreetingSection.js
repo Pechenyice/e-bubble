@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from "react";
 import './GreetingSection.css';
 import DoughnutList from "./DoughnutList";
+import HintsList from "./HintsList";
 import GreetingTechHint from "./GreetingTechHint";
+import IsometricHeading from "../PersonalSection/IsometricHeading";
 
 //TODO: Create normal system of timeouts for doughnut graph, now implementation is shockingly awful
 
@@ -13,73 +15,73 @@ function GreetingSection() {
                 tech: 'JavaScript',
                 text: <p className='hintBox__text'>Started learning JS <span className='greeting__accent'>3 years</span> ago. Now I am confidently writing <span className='greeting__accent'>"vanilla" JS</span> and starting look for suitable framework</p>,
                 display: false,
-                pos: {
-                    left: '-500px',
-                    top: '50px'
-                } 
+                // pos: {
+                //     left: '-500px',
+                //     top: '50px'
+                // } 
             },
             {
                 tech: 'React',
                 text: <p className='hintBox__text'>This <span className='greeting__accent'>page is written with React</span>! Now it is <span className='greeting__accent'>my main choice</span> between JS frameworks</p>,
                 display: false,
-                pos: {
-                    left: '700px',
-                    top: '400px'
-                } 
+                // pos: {
+                //     left: '700px',
+                //     top: '400px'
+                // } 
             },
             {
                 tech: 'Node.js',
                 text: <p className='hintBox__text'>Awesome runtime. <span className='greeting__accent'>2 of 3 years use this platform</span> for all fullstack projects</p>,
                 display: false,
-                pos: {
-                    left: '-450px',
-                    top: '500px'
-                } 
+                // pos: {
+                //     left: '-450px',
+                //     top: '500px'
+                // } 
             },
             {
                 tech: 'HTML+CSS',
                 text: <p className='hintBox__text'>Nothing interesting. Markup language and styles sheet are web base. Trying to be modern for <span className='greeting__accent'>5 years</span> in a row</p>,
                 display: false,
-                pos: {
-                    left: '-500px',
-                    top: '200px'
-                } 
+                // pos: {
+                //     left: '-500px',
+                //     top: '200px'
+                // } 
             },
             {
                 tech: 'Electron.js',
                 text: <p className='hintBox__text'>Very <span className='greeting__accent'>interesting for me</span> framework. I don't think it is useful for me every day, but it <span className='greeting__accent'>makes writing desktops fun and easy</span></p>,
                 display: false,
-                pos: {
-                    left: '600px',
-                    top: '-50px'
-                } 
+                // pos: {
+                //     left: '600px',
+                //     top: '-50px'
+                // } 
             },
             {
                 tech: 'Figma',
                 text: <p className='hintBox__text'>Look at this <span className='greeting__accent'><span className='greeting__accentJoke'>pretty</span> design</span>. I think Figma will want to disown it, but it is <span className='greeting__accent'>created in this tool</span></p>,
                 display: false,
-                pos: {
-                    left: '700px',
-                    top: '250px'
-                } 
+                // pos: {
+                //     left: '700px',
+                //     top: '250px'
+                // } 
             },
             {
                 tech: 'SQL/NoSQL',
                 text: <p className='hintBox__text'>select * from knowings;<br/><span className='greeting__accent'>Empty set</span> (0.00 sec)<br/><br/>Oh...</p>,
                 display: false,
-                pos: {
-                    left: '-400px',
-                    top: '0px'
-                } 
+                // pos: {
+                //     left: '-400px',
+                //     top: '0px'
+                // } 
             },
             {
                 tech: 'Git',
                 text: <p className='hintBox__text'>init -{'>'} remote -{'>'}  add -{'>'}  commit -{'>'} push <br/><br/> Not all, but <span className='greeting__accent'>99%</span> ;)</p>,
                 display: false,
-                pos: {
-                    left: '700px',
-                    top: '50px'
-                } 
+                // pos: {
+                //     left: '700px',
+                //     top: '50px'
+                // } 
             }
         ]
     });
@@ -257,13 +259,7 @@ function GreetingSection() {
 
                 <div className='graph__doughnut doughnut'>
 
-                    <h1 className='doughnut__heading'>
-                        <span className='doughnut__headingWrapper'>
-                            Hello, I’m<br/><span className='greeting__accent doughnut__bigHeading'>German Iskhakov</span><br/>the<br/><span className='greeting__accent'>web developer</span>
-                        </span>
-                    </h1>
-
-                    <DoughnutList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave}/>
+                    <DoughnutList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave} />
 
                     <svg width="531" height="531" viewBox="0 0 531 531" fill="none" xmlns="http://www.w3.org/2000/svg">
                         {
@@ -280,12 +276,35 @@ function GreetingSection() {
                         }
                     </svg>
 
+
+                        {/* <div className='test' style={{transform: 'perspective(10000px) rotateX(15deg) skewY(15deg)'}}> FOR SVG</div> */}
+
+                    
+
                     {
                         dreams.techs.map((t, i) => <GreetingTechHint key={i} pos={t.pos} name={t.tech} text={t.text} opacity={t.display ? 1 : 0}/>)
                     }
 
 
                     
+
+                </div>
+
+            </div>
+
+            <div className='greeting__isometricTextBox isometricTextBox'>
+
+                <div>
+
+                    <IsometricHeading text={'Competences'} />
+
+                    <HintsList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave} />
+
+                    <h1 className='doughnut__heading'>
+                        <span className='doughnut__headingWrapper'>
+                            Hello, I’m<br/><span className='greeting__accent doughnut__bigHeading'>German Iskhakov</span><br/>the <span className='greeting__accent'>web developer</span>
+                        </span>
+                    </h1>
 
                 </div>
 

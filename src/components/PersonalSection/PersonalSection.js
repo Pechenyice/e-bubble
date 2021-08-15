@@ -1,5 +1,6 @@
 import React, {useState, useEffect, useRef} from "react";
 import './PersonalSection.css';
+import PersonalIsometricPlayground from "./PersonalIsometricPlayground";
 
 function PersonalSection() {
 
@@ -21,15 +22,25 @@ function PersonalSection() {
         window.addEventListener('resize', handleResize, { passive: true });
         window.addEventListener('scroll', handleScroll, { passive: true });
 
+        handleResize();
+
         return () => {
             window.removeEventListener('scroll', handleScroll);
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
     return (
         <section className='app__personal personal' >
 
-            <div className='personal__awesomeBackground'></div>
+            <div className='personal__awesomeBackground' 
+                // style={{opacity: scrollPosition > (windowHeight / 2) ? '1' : '0'}}
+            >
+            </div>
+
+            <PersonalIsometricPlayground />
+
+            
             
 
         </section>
