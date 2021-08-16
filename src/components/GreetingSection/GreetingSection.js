@@ -251,8 +251,10 @@ function GreetingSection() {
     }
 
     return (
+        <div style={{perspective: '10000px'}}>
+        <div className='app__greetingWrapper' style={{transform: 'translateZ(0px)', transition: '1s'}}>
         <section className='app__greeting greeting'>
-
+            
             
 
             <div className='greeting__graph graph'>
@@ -296,15 +298,17 @@ function GreetingSection() {
 
                 <div>
 
-                    <IsometricHeading text={'Competences'} />
-
-                    <HintsList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave} />
-
                     <h1 className='doughnut__heading'>
                         <span className='doughnut__headingWrapper'>
                             Hello, I’m<br/><span className='greeting__accent doughnut__bigHeading'>German Iskhakov</span><br/>the <span className='greeting__accent'>web developer</span>
                         </span>
                     </h1>
+
+                    <IsometricHeading text={'Main competences'} />
+
+                    <HintsList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave} />
+
+                    
 
                 </div>
 
@@ -320,8 +324,10 @@ function GreetingSection() {
 
             
 
-
+            
         </section>
+        </div>
+        </div>
     );
 
 }
