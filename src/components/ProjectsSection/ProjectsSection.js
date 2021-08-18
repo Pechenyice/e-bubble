@@ -94,7 +94,7 @@ function ProjectsSection() {
                     }
                 ],
                 img: {
-                    path: './e-bubble/assets/vkHelper/',
+                    path: '/e-bubble/assets/vkHelper/',
                     active: 0,
                     content: ['0.png']
                 },
@@ -132,7 +132,7 @@ function ProjectsSection() {
                     }
                 ],
                 img: {
-                    path: './e-bubble/assets/audioPlayer/',
+                    path: '/e-bubble/assets/audioPlayer/',
                     active: 0,
                     content: ['0.png']
                 },
@@ -165,7 +165,7 @@ function ProjectsSection() {
                     }
                 ],
                 img: {
-                    path: './e-bubble/assets/pcPrebuilder/',
+                    path: '/e-bubble/assets/pcPrebuilder/',
                     active: 0,
                     content: ['0.png']
                 },
@@ -188,7 +188,7 @@ function ProjectsSection() {
                     }
                 ],
                 img: {
-                    path: './e-bubble/assets/itmoApp/',
+                    path: '/e-bubble/assets/itmoApp/',
                     active: 0,
                     content: ['0.png', '1.png', '2.png', '3.png', '4.png']
                 },
@@ -221,7 +221,7 @@ function ProjectsSection() {
                     }
                 ],
                 img: {
-                    path: './e-bubble/assets/itmoLanding/',
+                    path: '/e-bubble/assets/itmoLanding/',
                     active: 0,
                     content: ['0.png', '1.png', '2.png', '3.png', '4.png']
                 },
@@ -259,7 +259,7 @@ function ProjectsSection() {
                     }
                 ],
                 img: {
-                    path: './e-bubble/assets/fapay/',
+                    path: '/e-bubble/assets/fapay/',
                     active: 0,
                     content: ['0.png', '1.png']
                 },
