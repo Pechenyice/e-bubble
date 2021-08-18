@@ -359,6 +359,7 @@
     height: 300px;
     display: flex;
     align-items: center;
+    justify-content: center;
     background: linear-gradient(90deg, #9A1AFF 0%, #E864CB 100%);
 }
 
@@ -474,7 +475,7 @@
 .projectTechs__techBar {
     position: relative;
     background: #9A1AFF;
-    height: 75%;
+    height: 0%;
     width: 20px;
     transition: .3s;
 }
@@ -519,4 +520,62 @@
     background: var(--tech-background);
     filter: opacity(.5);
     transform: skewX(45deg) translate(5px, -10px);
+}
+
+.projects__galleryHint {
+    position: absolute;
+    bottom: -60px;
+    left: -20px;
+    width: 150px;
+    text-align: center;
+    transform: skewX(45deg);
+    font-size: 24px;
+}
+
+.projects__projectLink {
+    position: absolute;
+    bottom: -20px;
+    left: -200px;
+    width: 65px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: skewX(45deg);
+    font-size: 32px;
+    color: #181818;
+    background: white;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.projects__projectLink:hover {
+    transform: skewX(45deg) translate(5px, -5px);
+    transition: .3s;
+}
+
+.projects__projectLink::before {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 10px;
+    transform: skewY(-45deg) translate(-10px, -5px);
+    background: rgba(255, 255, 255, 0.5);
+    filter: brightness(.5);
+}
+
+.projects__projectLink::after {
+    content: '';
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.5);
+    filter: brightness(.5);
+    transform: skewX(-45deg) translate(5px, 10px);
 }

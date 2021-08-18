@@ -5,6 +5,7 @@ import { Chart, registerables } from 'chart.js';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft, faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import ProjectsTech from "./ProjectsTech";
+import { faGithub, faGooglePlay, faInternetExplorer } from "@fortawesome/free-brands-svg-icons";
 
 Chart.register(...registerables);
 
@@ -70,7 +71,7 @@ function ProjectsSection() {
     let [projects, setProjects] = useState({
         list: [
             {
-                active: true,
+                active: false,
                 name: 'VK Helper',
                 type: 'Website',
                 status: 'Development',
@@ -91,7 +92,16 @@ function ProjectsSection() {
                         percent: 23,
                         color: '#2965f1'
                     }
-                ]
+                ],
+                img: {
+                    path: './e-bubble/assets/vkHelper/',
+                    active: 0,
+                    content: ['0.png']
+                },
+                link: {
+                    href: '#',
+                    icon: faGithub
+                }
             },
             {
                 active: false,
@@ -120,10 +130,19 @@ function ProjectsSection() {
                         percent: 25,
                         color: '#2965f1'
                     }
-                ]
+                ],
+                img: {
+                    path: './e-bubble/assets/audioPlayer/',
+                    active: 0,
+                    content: ['0.png']
+                },
+                link: {
+                    href: '#',
+                    icon: faInternetExplorer
+                }
             },
             {
-                active: false,
+                active: true,
                 name: 'PC Prebuilder',
                 type: 'Desktop',
                 status: 'Predeploy',
@@ -144,7 +163,39 @@ function ProjectsSection() {
                         percent: 42,
                         color: '#2965f1'
                     }
-                ]
+                ],
+                img: {
+                    path: './e-bubble/assets/pcPrebuilder/',
+                    active: 0,
+                    content: ['0.png']
+                },
+                link: {
+                    href: '#',
+                    icon: faGithub
+                }
+            },
+            {
+                active: false,
+                name: 'ITMO App',
+                type: 'Mobile app',
+                status: 'Deploy',
+                briefly: 'App to help students with their education activity',
+                graph: [
+                    {
+                        name: 'Java',
+                        percent: 100,
+                        color: '#f89820'
+                    }
+                ],
+                img: {
+                    path: './e-bubble/assets/itmoApp/',
+                    active: 0,
+                    content: ['0.png', '1.png', '2.png', '3.png', '4.png']
+                },
+                link: {
+                    href: '#',
+                    icon: faGooglePlay
+                }
             },
             {
                 active: false,
@@ -168,21 +219,16 @@ function ProjectsSection() {
                         percent: 29,
                         color: '#2965f1'
                     }
-                ]
-            },
-            {
-                active: false,
-                name: 'ITMO App',
-                type: 'Mobile app',
-                status: 'Deploy',
-                briefly: 'App to help students with their education activity',
-                graph: [
-                    {
-                        name: 'Java',
-                        percent: 100,
-                        color: '#f89820'
-                    }
-                ]
+                ],
+                img: {
+                    path: './e-bubble/assets/itmoLanding/',
+                    active: 0,
+                    content: ['0.png', '1.png', '2.png', '3.png', '4.png']
+                },
+                link: {
+                    href: '#',
+                    icon: faInternetExplorer
+                }
             },
             {
                 active: false,
@@ -211,7 +257,16 @@ function ProjectsSection() {
                         percent: 13,
                         color: '#29BEB0'
                     }
-                ]
+                ],
+                img: {
+                    path: './e-bubble/assets/fapay/',
+                    active: 0,
+                    content: ['0.png', '1.png']
+                },
+                link: {
+                    href: '#',
+                    icon: faGithub
+                }
             }
         ]
     });
@@ -234,6 +289,24 @@ function ProjectsSection() {
         });
 
         setProjects({list: newProjects});
+    }
+
+    function handleSwapImg(step) {
+        return () => {
+            let newProjects = projects.list.map(p => {
+                if (p.active) {
+                    
+                    let newActive = p.img.active + step;
+
+                    if (newActive > p.img.content.length - 1) newActive = 0;
+                    if (newActive < 0) newActive = p.img.content.length - 1;
+
+                    return Object.assign({}, p, {img: {path: p.img.path, active: newActive, content: p.img.content}});
+                } else return p;
+            });
+
+            setProjects({list: newProjects});
+        }
     }
 
     return (
@@ -265,13 +338,7 @@ function ProjectsSection() {
 
                         <div>
                             <div className='projects__projectStatus projectStatus'>
-                                <div className='projectStatus__text'>[STATUS]<br/>
-                                {   
-                                    projects.list.map(p => {
-                                        return p.active ? p.status : null;  
-                                    })
-                                }
-                                </div>
+                                
                                 <div className='projectStatus__text projectStatus__text_large'>[BRIEFLY]<br/>
                                 {   
                                     projects.list.map(p => {
@@ -279,6 +346,15 @@ function ProjectsSection() {
                                     })
                                 }
                                 </div>
+
+                                <div className='projectStatus__text'>[STATUS]<br/>
+                                {   
+                                    projects.list.map(p => {
+                                        return p.active ? p.status : null;  
+                                    })
+                                }
+                                </div>
+
                             </div>
 
                             <div className='projects__projectTechs projectTechs'>
@@ -306,10 +382,42 @@ function ProjectsSection() {
                         </div>
 
                         <div className='projects__projectGallery'>
-                            <img src='./e-bubble/assets/test.png' />
+                            {
+                                projects.list.map(p => {
+                                    if (p.active) {
+                                        return <img src={p.img.path + p.img.content[p.img.active]} />
+                                    }
+                                })
+                            }
                             <div className='projects__projectsGalleryControllerWrapper'>
-                                <div className='projects__projectsGalleryController'><FontAwesomeIcon icon={faChevronLeft} /></div>
-                                <div className='projects__projectsGalleryController'><FontAwesomeIcon icon={faChevronRight} /></div>
+                                <div className='projects__projectsGalleryController' onClick={handleSwapImg(-1)} ><FontAwesomeIcon icon={faChevronLeft} /></div>
+                                <div className='projects__projectsGalleryController' onClick={handleSwapImg(1)} ><FontAwesomeIcon icon={faChevronRight} /></div>
+                                <div className='projects__galleryHint'>
+                                {'screenshot '}
+                                {
+                                    projects.list.map(p => {
+                                        if (p.active) {
+                                            return p.img.active + 1;
+                                        }
+                                    })
+                                }
+                                {' / '}
+                                {
+                                    projects.list.map(p => {
+                                        if (p.active) {
+                                            return p.img.content.length;
+                                        }
+                                    })
+                                }
+                                </div>
+                                {
+                                    projects.list.map(p => {
+                                        if (p.active) {
+                                            return <a href={p.link.href}><div className='projects__projectLink'><FontAwesomeIcon icon={p.link.icon} /></div></a>;
+                                        }
+                                    }) 
+                                }
+                                
                             </div>
                         </div>
 
