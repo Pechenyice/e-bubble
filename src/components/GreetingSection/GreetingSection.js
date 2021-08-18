@@ -91,7 +91,7 @@ function GreetingSection() {
         interval: null,
         current: 0
     });
-
+    
     let [svgs, setSvgs] = useState(
         {
             svgList: [
