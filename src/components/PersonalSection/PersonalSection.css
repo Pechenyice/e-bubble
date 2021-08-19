@@ -26,6 +26,10 @@
     align-items: center;
 }
 
+.personal__textBox:last-child {
+    margin-right: 250px;
+}
+
 .textBox__wrapper {
     margin-bottom: 0px;
     transform: perspective(10000px) rotateX(15deg) skewY(-15deg);
@@ -221,7 +225,9 @@
     background: #fff;
     font-size: 40px;
     transform: translate(0, 0);
+    /* box-shadow: -7px -7px 10px rgba(255, 255, 255, 0); */
     transition: .3s;
+    /* transition: box-shadow .5s; */
 }
 
 .isometric__skillRating::before {
@@ -272,6 +278,21 @@
     opacity: 1;
     transition: .5s;
 }
+
+/* .isometric__skill:hover .isometric__skillRating {
+    transform: translate(3px, 3px);
+    transition: .5s;
+} */
+
+/* .isometric__skill:hover .isometric__skillRating {
+    box-shadow: -7px -7px 10px #fff;
+    transition: .5s;
+}
+
+.isometric__skill:hover .isometric__skillRating_active {
+    box-shadow: -7px -7px 10px #F0DB4F;
+    transition: .5s;
+} */
 
 @keyframes backgrounder {
     0% {
