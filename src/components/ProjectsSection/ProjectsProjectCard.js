@@ -35,6 +35,8 @@ function ProjectsProjectCard({name, type, active, onProjectClick}) {
             <h3 className='projectsList__projectName'>{name}</h3>
             <FontAwesomeIcon className='projectsList__projectIcon' icon={initCardByType().icon} ></FontAwesomeIcon>
             <p className='projectsList__projectType'>{initCardByType().type}</p>
+
+
         </div>
     );
 
