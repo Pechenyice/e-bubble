@@ -261,31 +261,54 @@ function GreetingSection() {
 
                 <div className='graph__doughnut doughnut'>
 
-                    <DoughnutList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave} />
+                    <div className='doughnut__doughnutProjector'>
+                        <div className='doughnut__doughnutProjectorDecorator'></div>
 
-                    <svg width="531" height="531" viewBox="0 0 531 531" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                        <svg className='doughnut__doughnutProjectorRays' width="58" height="67" viewBox="0 0 58 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect className='doughnut__doughnutProjectorRays_main' y="10.0261" width="3" height="60" rx="1.5" transform="rotate(-20 0 10.0261)" fill="#B0BDFF" fill-opacity="0.5"/>
+                            <rect className='doughnut__doughnutProjectorRays_mainDelayed' x="54.2607" y="9" width="3" height="60" rx="1.5" transform="rotate(20 54.2607 9)" fill="#B0BDFF" fill-opacity="0.5"/>
+                            <rect className='doughnut__doughnutProjectorRays_first' x="36.6045" y="28" width="3" height="15" rx="1.5" transform="rotate(10 36.6045 28)" fill="#B0BDFF" fill-opacity="0.5"/>
+                            <rect className='doughnut__doughnutProjectorRays_second' x="27" width="3" height="40" rx="1.5" fill="#B0BDFF" fill-opacity="0.5"/>
+                            <rect className='doughnut__doughnutProjectorRays_first' x="23" y="43.5209" width="3" height="15" rx="1.5" transform="rotate(-10 23 43.5209)" fill="#B0BDFF" fill-opacity="0.5"/>
+                            <rect className='doughnut__doughnutProjectorRays_third' x="45.1304" y="8" width="3" height="15" rx="1.5" transform="rotate(20 45.1304 8)" fill="#B0BDFF" fill-opacity="0.5"/>
+                            <rect className='doughnut__doughnutProjectorRays_third' x="14" y="16.5209" width="3" height="20" rx="1.5" transform="rotate(-10 14 16.5209)" fill="#B0BDFF" fill-opacity="0.5"/>
+                        </svg>
+
+
+                    </div>
+
+                    <div className='doughnut__proection'>
+
+                        <DoughnutList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave} />
+
+                        <svg width="531" height="531" viewBox="0 0 531 531" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            {
+                                svgs.svgList.map((s, i) => {
+
+                                    let isActive = false;
+
+                                    dreams.techs.forEach(t => {
+                                        t.tech === s.tech ? isActive = t.display : isActive = isActive;
+                                    });
+
+                                    return <g key={i}>{[s.staticContent, <path className='graph__cell' fill-opacity={isActive ? '1' : '0'} d={s.path} onMouseEnter={() => {handleDoughnutIconHover(s.tech)}} onMouseLeave={() => {handleDoughnutIconLeave(s.tech)}} fill-rule="evenodd" clip-rule="evenodd" fill={s.activeColor} />]}</g>;
+                                })
+                            }
+                        </svg>
+
                         {
-                            svgs.svgList.map((s, i) => {
-
-                                let isActive = false;
-
-                                dreams.techs.forEach(t => {
-                                    t.tech === s.tech ? isActive = t.display : isActive = isActive;
-                                });
-
-                                return <g key={i}>{[s.staticContent, <path className='graph__cell' fill-opacity={isActive ? '1' : '0'} d={s.path} onMouseEnter={() => {handleDoughnutIconHover(s.tech)}} onMouseLeave={() => {handleDoughnutIconLeave(s.tech)}} fill-rule="evenodd" clip-rule="evenodd" fill={s.activeColor} />]}</g>;
-                            })
+                            dreams.techs.map((t, i) => <GreetingTechHint key={i} pos={t.pos} name={t.tech} text={t.text} opacity={t.display ? 1 : 0}/>)
                         }
-                    </svg>
+
+                    </div>
 
 
                         {/* <div className='test' style={{transform: 'perspective(10000px) rotateX(15deg) skewY(15deg)'}}> FOR SVG</div> */}
 
                     
 
-                    {
-                        dreams.techs.map((t, i) => <GreetingTechHint key={i} pos={t.pos} name={t.tech} text={t.text} opacity={t.display ? 1 : 0}/>)
-                    }
+                    
 
 
                     

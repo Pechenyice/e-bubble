@@ -41,6 +41,7 @@
         position: relative;
         width: 100%;
         height: 531px;
+        transform: translateY(-50px);
     }
 
     .doughnut__heading {
@@ -298,7 +299,7 @@
 
     .hintBox__hint {
         position: absolute;
-        left: calc(50% - 116px);
+        left: calc(50% - 126px);
         top: calc(50%);
     }
 
@@ -327,7 +328,7 @@
     }
 
     .greeting__isometricTextBox {
-        transform: translateY(100px);
+        transform: translateY(100px) translateX(-120px);
     }
 
     .isometricTextBox__list {
@@ -351,7 +352,7 @@
 
     .greeting__graph {
         overflow-x: visible;
-        transform: translateY(-100px);
+        transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-100px);
     }
 
     .doughnut__optionName {
@@ -403,9 +404,160 @@
         transform: skewX(45deg) translate(10px, -20px);
     }
 
+    .doughnut__doughnutProjector {
+        position: absolute;
+        bottom: -150px;
+        left: calc(50% - 150px);
+        width: 300px;
+        transform: skewY(-15deg) rotateX(15deg);
+    }
+    
+    .doughnut__doughnutProjectorDecorator {
+        position: absolute;
+        z-index: 0;
+        top: calc(50% - 25px);
+        left: calc(50% - 60px);
+        width: 120px;
+        height: 50px;
+        background: linear-gradient(90deg, #9A1AFF 0%, #E864CB 100%);
+        transform: skewX(45deg);
+    }
+    
+    .doughnut__doughnutProjectorDecorator::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 20px;
+        transform: skewY(-45deg) translate(-20px, -10px);
+        background:#9A1AFF;
+        filter: brightness(.5);
+    }
+    
+    .doughnut__doughnutProjectorDecorator::after {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        height: 20px;
+        width: 100%;
+        background: linear-gradient(90deg, #9A1AFF 0%, #E864CB 100%);
+        filter: brightness(.5);
+        transform: skewX(-45deg) translate(10px, 20px);
+    }
 
+    .doughnut__proection {
+        animation: translation 2s ease-in-out 0s infinite alternate;
+    }
 
+    .doughnut__doughnutProjectorRays {
+        position: absolute;
+        width: 50px;
+        top: -60px;
+        left: calc(50% - 25px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: translation 2s ease-in-out 0s infinite alternate;
+    }
 
+    .doughnut__doughnutProjectorRays_main {
+        transition: .3s;
+        animation: opacityRaysThird 4s linear 0s infinite forwards;
+    }
+
+    .doughnut__doughnutProjectorRays_mainDelayed {
+        transition: .3s;
+        animation: opacityRaysThird 6s linear 2s infinite forwards;
+    }
+
+    .doughnut__doughnutProjectorRays_first {
+        transition: .3s;
+        animation: opacityRaysFirst 5s linear 0s infinite forwards;
+    }
+
+    .doughnut__doughnutProjectorRays_second {
+        transition: .3s;
+        animation: opacityRaysSecond 5s linear 0s infinite forwards;
+    }
+
+    .doughnut__doughnutProjectorRays_third {
+        transition: .3s;
+        animation: opacityRaysThird 5s linear 0s infinite forwards;
+    }
+
+    @keyframes opacityRaysMain {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes opacityRaysFirst {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes opacityRaysSecond {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+    
+    @keyframes opacityRaysThird {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        75% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes translation {
+        from {
+            transform: translateY(0px);
+        }
+
+        to {
+            transform: translateY(-15px);
+        }
+    }
 
     @keyframes shaker {
         0% {
