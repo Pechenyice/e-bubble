@@ -3,6 +3,7 @@ import './App.css';
 import GreetingSection from './components/GreetingSection/GreetingSection';
 import PersonalSection from './components/PersonalSection/PersonalSection';
 import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
+import NavigationSection from "./components/NavigationSection/NavigationSection";
 
 function App() {
 
@@ -16,7 +17,8 @@ function App() {
     
     if (!window.viewManager.isInAction) {
       
-
+      document.getElementsByClassName('lift__floor')[window.viewManager.activeView].classList.remove('lift__floor_active');
+      console.log(window.viewManager.activeView)
       if (direction > 0) {
         window.viewManager.activeView++;
         if (window.viewManager.activeView > 2) {
@@ -38,9 +40,9 @@ function App() {
           window.viewManager.setPrevView();
         }
       } 
-      
-
-      
+      document.getElementsByClassName('lift__floor')[window.viewManager.activeView].classList.add('lift__floor_active');
+      console.log(window.viewManager.activeView)
+    
 
     }
 
@@ -91,7 +93,17 @@ function App() {
 
   }
 
+  function initControlsAnimation(direction) {
+    document.getElementsByClassName('navigationSection__navWrapper')[0].style.transform = 'translateZ(-10000px)';
+
+    setTimeout(() => {
+      document.getElementsByClassName('navigationSection__navWrapper')[0].style.transform = 'translateZ(0px) translateZ(0px) translateX(0px) translateY(0px)';
+    }, 1800);
+  }
+
   function viewManagerNextViewSetter() {
+
+    initControlsAnimation(1);
 
     console.log(window.viewManager.activeView)
 
@@ -166,6 +178,8 @@ function App() {
   }
 
   function viewManagerPrevViewSetter() {
+
+    initControlsAnimation(-1);
 
     console.log(window.viewManager.activeView)
 
@@ -243,6 +257,97 @@ function App() {
 
   }
 
+  function viewManagerDirectViewSetter(prevView, newView) {
+
+    window.viewManager.activeView = newView;
+    window.viewManager.isInAction = true;
+
+    
+
+    window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='none';
+    window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='none';
+    window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='none';
+
+    if (Math.abs(newView - prevView) === 1) {
+      newView > prevView ? window.viewManager.setNextView() : window.viewManager.setPrevView();
+      return;
+    }
+
+    
+
+    clearTimeout(window.viewManager.positiveTimeout);
+    window.viewManager.positiveTimeout = handlePosistiveResult(window.viewManager.activeView);
+
+    if (newView < prevView) {
+
+      initControlsAnimation(-1);
+
+      window.document.getElementsByClassName('app__personalWrapper')[0].style.transition = '0s';
+
+      window.document.getElementsByClassName('app__projectsWrapper')[0].style.transform = 'translateZ(-10000px)';
+      window.document.getElementsByClassName('app__projectsWrapper')[0].style.transition='1s';
+      setTimeout(() => {
+        window.document.getElementsByClassName('app__projectsWrapper')[0].style.transform = 'translateZ(-10000px) translateX(150vw) translateY(150vh)';
+        
+      }, 1000);
+
+      setTimeout(() => {
+        window.viewManager.isInAction = false;
+
+        window.document.getElementsByClassName('app__greetingWrapper')[0].style.transform = 'translateX(0vw) translateY(0vh) translateZ(0px)';
+
+        window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='auto';
+        window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='none';
+        window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='none';
+
+        window.document.getElementsByClassName('app__personalWrapper')[0].style.transition = '1s';
+      }, 1800);
+
+      setTimeout(() => {
+        window.document.getElementsByClassName('app__greetingWrapper')[0].style.transition='1s';
+        window.document.getElementsByClassName('app__greetingWrapper')[0].style.transform = 'translateX(0vw) translateY(0vh) translateZ(-10000px)';
+
+        window.document.getElementsByClassName('app__personalWrapper')[0].style.transform = 'translateX(150vw) translateY(150vh) translateZ(-10000px)';
+        
+      }, 800);
+
+    } else {
+
+      initControlsAnimation(1);
+
+      window.document.getElementsByClassName('app__personalWrapper')[0].style.transition = '0s';
+
+      window.document.getElementsByClassName('app__greetingWrapper')[0].style.transform = 'translateZ(-10000px)';
+      window.document.getElementsByClassName('app__greetingWrapper')[0].style.transition='1s';
+      setTimeout(() => {
+        window.document.getElementsByClassName('app__greetingWrapper')[0].style.transform = 'translateZ(-10000px) translateX(-150vw) translateY(-150vh)';
+        
+      }, 1000);
+
+      setTimeout(() => {
+        window.viewManager.isInAction = false;
+
+        window.document.getElementsByClassName('app__projectsWrapper')[0].style.transform = 'translateX(0vw) translateY(0vh) translateZ(0px)';
+
+        window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='none';
+        window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='none';
+        window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='auto';
+
+        window.document.getElementsByClassName('app__personalWrapper')[0].style.transition = '1s';
+      }, 1800);
+
+      setTimeout(() => {
+        window.document.getElementsByClassName('app__projectsWrapper')[0].style.transition='1s';
+        window.document.getElementsByClassName('app__projectsWrapper')[0].style.transform = 'translateX(0vw) translateY(0vh) translateZ(-10000px)';
+        
+
+        window.document.getElementsByClassName('app__personalWrapper')[0].style.transform = 'translateX(-150vw) translateY(-150vh) translateZ(-10000px)';
+      }, 800);
+
+    }
+
+  }
+
   useEffect(() => {
 
     window.viewManager = {
@@ -250,6 +355,7 @@ function App() {
       isInAction: false,
       setNextView: viewManagerNextViewSetter,
       setPrevView: viewManagerPrevViewSetter,
+      setDirectView: viewManagerDirectViewSetter,
       positiveTimeout: null
     }
     
@@ -260,6 +366,7 @@ function App() {
 
   return (
     <section className="app" >
+      <NavigationSection />
       <GreetingSection />
       <PersonalSection />
       <ProjectsSection />
