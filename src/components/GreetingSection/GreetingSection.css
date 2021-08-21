@@ -2,11 +2,12 @@
 
     .app__greeting {
         width: 100%;
-        min-height: 100vh;
+        /* min-height: 100vh; */
         height: 100vh;
         display: flex;
         justify-content: space-evenly;
-        flex-wrap: wrap;
+        align-items: center;
+        /* flex-wrap: wrap; */
     }
 
     .greeting__hintBox {
@@ -308,7 +309,7 @@
         top: unset;
         left: unset;
         font-size: 48px;
-        margin-top: 50px;
+        margin-top: 200px;
         margin-bottom: 50px;
         /* transform: translateY(50px); */
     }
@@ -318,7 +319,11 @@
     }
 
     .doughnut__heading .doughnut__bigHeading {
-        font-size: 80px;
+        padding: 0px 30px;
+        line-height: 150px;
+        font-size: 90px;
+        background: #FADE2B;
+        color: #181818;
     }
 
     .greeting__isometricTextBox {
@@ -328,7 +333,7 @@
     }
 
     .greeting__isometricTextBox {
-        transform: translateY(100px) translateX(-120px);
+        margin-right: 240px;
     }
 
     .isometricTextBox__list {
@@ -455,13 +460,15 @@
 
     .doughnut__doughnutProjectorRays {
         position: absolute;
-        width: 50px;
-        top: -60px;
-        left: calc(50% - 25px);
+        width: 134px;
+        top: -120px;
+        left: calc(50% - 67px);
         display: flex;
         align-items: center;
         justify-content: center;
-        animation: translation 2s ease-in-out 0s infinite alternate;
+        animation: scalation 2s ease-in-out 0s infinite alternate;
+        z-index: 0;
+        transform: skewY(15deg);
     }
 
     .doughnut__doughnutProjectorRays_main {
@@ -556,6 +563,18 @@
 
         to {
             transform: translateY(-15px);
+        }
+    }
+
+    @keyframes scalation {
+        from {
+            /* filter: brightness(1); */
+            transform: rotateY(0deg) translateY(0px) skewY(15deg);
+        }
+
+        to {
+            /* filter: brightness(1.2); */
+            transform: rotateY(30deg) translateY(-5px) skewY(15deg);
         }
     }
 

@@ -251,7 +251,7 @@ function GreetingSection() {
     }
 
     return (
-        <div style={{perspective: '10000px'}}>
+        <div className='app__greetingWrapperBox' style={{perspective: '10000px'}}>
         <div className='app__greetingWrapper' style={{transform: 'translateZ(0px)', transition: '1s'}}>
         <section className='app__greeting greeting'>
             
@@ -265,7 +265,7 @@ function GreetingSection() {
                         <div className='doughnut__doughnutProjectorDecorator'></div>
 
 
-                        <svg className='doughnut__doughnutProjectorRays' width="58" height="67" viewBox="0 0 58 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        {/* <svg className='doughnut__doughnutProjectorRays' width="58" height="67" viewBox="0 0 58 67" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect className='doughnut__doughnutProjectorRays_main' y="10.0261" width="3" height="60" rx="1.5" transform="rotate(-20 0 10.0261)" fill="#B0BDFF" fill-opacity="0.5"/>
                             <rect className='doughnut__doughnutProjectorRays_mainDelayed' x="54.2607" y="9" width="3" height="60" rx="1.5" transform="rotate(20 54.2607 9)" fill="#B0BDFF" fill-opacity="0.5"/>
                             <rect className='doughnut__doughnutProjectorRays_first' x="36.6045" y="28" width="3" height="15" rx="1.5" transform="rotate(10 36.6045 28)" fill="#B0BDFF" fill-opacity="0.5"/>
@@ -273,7 +273,23 @@ function GreetingSection() {
                             <rect className='doughnut__doughnutProjectorRays_first' x="23" y="43.5209" width="3" height="15" rx="1.5" transform="rotate(-10 23 43.5209)" fill="#B0BDFF" fill-opacity="0.5"/>
                             <rect className='doughnut__doughnutProjectorRays_third' x="45.1304" y="8" width="3" height="15" rx="1.5" transform="rotate(20 45.1304 8)" fill="#B0BDFF" fill-opacity="0.5"/>
                             <rect className='doughnut__doughnutProjectorRays_third' x="14" y="16.5209" width="3" height="20" rx="1.5" transform="rotate(-10 14 16.5209)" fill="#B0BDFF" fill-opacity="0.5"/>
+                        </svg> */}
+
+                        <svg className='doughnut__doughnutProjectorRays' width="134" height="111" viewBox="0 0 134 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M66.5 110.5L0 0H134L66.5 110.5Z" fill="url(#paint0_linear)"/>
+                        <defs>
+                        <linearGradient id="paint0_linear" x1="67" y1="0" x2="67" y2="110.5" gradientUnits="userSpaceOnUse">
+                        <stop stop-color="#778FE4" stop-opacity="0"/>
+                        <stop offset="0.3125" stop-color="#778FE4" stop-opacity="0.05"/>
+                        <stop offset="0.640625" stop-color="#778FE4" stop-opacity="0.2"/>
+                        <stop offset="1" stop-color="#778FE4" stop-opacity="0.65"/>
+                        </linearGradient>
+                        </defs>
                         </svg>
+
+
+
+
 
 
                     </div>
@@ -327,9 +343,9 @@ function GreetingSection() {
                         </span>
                     </h1>
 
-                    <IsometricHeading text={'Main competences'} />
+                    {/* <IsometricHeading text={'Main competences'} />
 
-                    <HintsList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave} />
+                    <HintsList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave} /> */}
 
                     
 
