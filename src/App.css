@@ -15,7 +15,9 @@ body {
   overflow: hidden;
 }
 
-
+* {
+  -webkit-tap-highlight-color: transparent;
+}
 
 
 
@@ -404,7 +406,11 @@ body {
   .projects__projectLink {
     bottom: -150px !important;
     left: 0px !important;
-}
+  }
+
+  .projects__projectStatus {  
+    margin-left: -50px !important;
+  }
 
 }
 
@@ -421,13 +427,16 @@ body {
 
   .doughnut__heading .greeting__accent {
     font-size: 60px !important;
+    margin-bottom: 50px !important;
   }
 
   .doughnut__heading .doughnut__bigHeading {
     font-size: 72px !important;
+    line-height: 120px !important;
   }
 
   .greeting__graph {
+    margin-top: 50px !important;
     transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-200px) scale(.55) !important;
   }
 
@@ -455,17 +464,21 @@ body {
 
 @media screen and (max-width: 400px) {
 
+  .app__greeting {
+    height: 700px !important;
+  }
+
   .doughnut__heading {
     width: 400px !important;
-    font-size: 36px !important;
+    font-size: 32px !important;
   }
 
   .doughnut__heading .greeting__accent {
-    font-size: 48px !important;
+    font-size: 40px !important;
   }
 
   .doughnut__heading .doughnut__bigHeading {
-    font-size: 60px !important;
+    font-size: 44px !important;
   }
 
   .greeting__graph {
@@ -505,10 +518,26 @@ body {
   }
 
   .projects__projectGalleryImgWrapper {
-    margin-left: -280px !important;
+    margin-left: -80px !important;
   }
 
+  /* .projects__wrapper .doughnut__doughnutProjector {
+    left: -20px !important;
+  } */
+
   .projects__wrapper .projects__projectsGalleryControllerWrapper  {
-    right: 270px !important;
+    right: 170px !important;
+  }
+
+  .greeting__isometricTextBox {
+    width: 300px !important;
+  }
+
+  .doughnut__heading {
+    width: 300px !important;
+  }
+
+  .projects__projectGallery {
+    margin-left: 0px !important;
   }
 }
