@@ -5,6 +5,15 @@
     justify-content: center; 
 }
 
+.app__projectsWrapperBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    perspective: 10000px;
+    width: 100%;
+    pointer-events: none;
+}
+
 .projects__wrapper {
     transform: perspective(10000px) rotateX(15deg) skewY(-15deg);
 }
