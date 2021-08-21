@@ -263,6 +263,7 @@ body {
       transform: scale(1) !important;
       /* min-height: 100vh; */
       height: 900px !important;
+      margin-top: 50px !important;
   }
 
   .personal__textBox:last-child {
@@ -370,7 +371,7 @@ body {
 
   .projects__projectTechs {
     width: 300px;
-    justify-content: center;
+    justify-content: center !important;
   }
 
   .projects__projectGallery {
@@ -399,6 +400,11 @@ body {
   .projects__wrapper .doughnut__doughnutProjectorRays {
     top: -110px !important;
   }
+
+  .projects__projectLink {
+    bottom: -150px !important;
+    left: 0px !important;
+}
 
 }
 

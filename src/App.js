@@ -365,7 +365,22 @@ function App() {
     
 
     window.addEventListener('mousewheel', handleScrollEffect);
-    window.addEventListener('resize', () => {if (window.innerHeight > 650 && window.innerWidth > 1150) window.scrollTo(0,0);}, {passive: true});
+    window.addEventListener('resize', () => { if (window.innerHeight > 650 && window.innerWidth > 1150) {
+        window.scrollTo(0,0);
+      } else {
+        window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='auto';
+        window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='auto';
+        window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='auto';
+      } },
+    {passive: true});
+
+    window.addEventListener('DOMContentLoaded', () => { if (window.innerHeight > 650 && window.innerWidth > 1150) {
+      window.scrollTo(0,0);
+    } else {
+      window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='auto';
+      window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='auto';
+      window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='auto';
+    } });
 
   }, []);
 
