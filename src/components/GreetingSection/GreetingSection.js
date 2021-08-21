@@ -13,8 +13,9 @@ function GreetingSection() {
         techs: [
             {
                 tech: 'JavaScript',
-                text: <p className='hintBox__text'>Started learning JS <span className='greeting__accent'>3 years</span> ago. Now I am confidently writing <span className='greeting__accent'>"vanilla" JS</span> and starting look for suitable framework</p>,
+                text: <p className='hintBox__text'><h6>JavaScript</h6>Started learning JS <span className='greeting__accent'>3 years</span> ago. Now I am confidently writing <span className='greeting__accent'>"vanilla" JS</span> and starting look for suitable framework</p>,
                 display: false,
+                activeColor: '#E8FC04'
                 // pos: {
                 //     left: '-500px',
                 //     top: '50px'
@@ -22,8 +23,9 @@ function GreetingSection() {
             },
             {
                 tech: 'React',
-                text: <p className='hintBox__text'>This <span className='greeting__accent'>page is written with React</span>! Now it is <span className='greeting__accent'>my main choice</span> between JS frameworks</p>,
+                text: <p className='hintBox__text'><h6>React</h6>This <span className='greeting__accent'>page is written with React</span>! Now it is <span className='greeting__accent'>my main choice</span> between JS frameworks</p>,
                 display: false,
+                activeColor: '#61DBFB'
                 // pos: {
                 //     left: '700px',
                 //     top: '400px'
@@ -31,8 +33,9 @@ function GreetingSection() {
             },
             {
                 tech: 'Node.js',
-                text: <p className='hintBox__text'>Awesome runtime. <span className='greeting__accent'>2 of 3 years use this platform</span> for all fullstack projects</p>,
+                text: <p className='hintBox__text'><h6>Node.js</h6>Awesome runtime. <span className='greeting__accent'>2 of 3 years use this platform</span> for all fullstack projects</p>,
                 display: false,
+                activeColor: '#3C873A'  
                 // pos: {
                 //     left: '-450px',
                 //     top: '500px'
@@ -40,8 +43,9 @@ function GreetingSection() {
             },
             {
                 tech: 'HTML+CSS',
-                text: <p className='hintBox__text'>Nothing interesting. Markup language and styles sheet are web base. Trying to be modern for <span className='greeting__accent'>5 years</span> in a row</p>,
+                text: <p className='hintBox__text'><h6>HTML + CSS</h6>Nothing interesting. Markup language and styles sheet are web base. Trying to be modern for <span className='greeting__accent'>5 years</span> in a row</p>,
                 display: false,
+                activeColor: '#F06529'
                 // pos: {
                 //     left: '-500px',
                 //     top: '200px'
@@ -49,8 +53,9 @@ function GreetingSection() {
             },
             {
                 tech: 'Electron.js',
-                text: <p className='hintBox__text'>Very <span className='greeting__accent'>interesting for me</span> framework. I don't think it is useful for me every day, but it <span className='greeting__accent'>makes writing desktops fun and easy</span></p>,
+                text: <p className='hintBox__text'><h6>Electron.js</h6>Very <span className='greeting__accent'>interesting for me</span> framework. I don't think it is useful for me every day, but it <span className='greeting__accent'>makes writing desktops fun and easy</span></p>,
                 display: false,
+                activeColor: '#9FEAF9'
                 // pos: {
                 //     left: '600px',
                 //     top: '-50px'
@@ -58,8 +63,9 @@ function GreetingSection() {
             },
             {
                 tech: 'Figma',
-                text: <p className='hintBox__text'>Look at this <span className='greeting__accent'><span className='greeting__accentJoke'>pretty</span> design</span>. I think Figma will want to disown it, but it is <span className='greeting__accent'>created in this tool</span></p>,
+                text: <p className='hintBox__text'><h6>Figma</h6>Look at this <span className='greeting__accent'><span className='greeting__accentJoke'>pretty</span> design</span>. I think Figma will want to disown it, but it is <span className='greeting__accent'>created in this tool</span></p>,
                 display: false,
+                activeColor: '#FF7765'
                 // pos: {
                 //     left: '700px',
                 //     top: '250px'
@@ -67,8 +73,9 @@ function GreetingSection() {
             },
             {
                 tech: 'SQL/NoSQL',
-                text: <p className='hintBox__text'>select * from knowings;<br/><span className='greeting__accent'>Empty set</span> (0.00 sec)<br/><br/>Oh...</p>,
+                text: <p className='hintBox__text'><h6>SQL/NoSQL</h6>select * from knowings;<br/><span className='greeting__accent'>Empty set</span> (0.00 sec)<br/><br/>Oh...</p>,
                 display: false,
+                activeColor: '#00758F'
                 // pos: {
                 //     left: '-400px',
                 //     top: '0px'
@@ -76,8 +83,9 @@ function GreetingSection() {
             },
             {
                 tech: 'Git',
-                text: <p className='hintBox__text'>init -{'>'} remote -{'>'}  add -{'>'}  commit -{'>'} push <br/><br/> Not all, but <span className='greeting__accent'>99%</span> ;)</p>,
+                text: <p className='hintBox__text'><h6>Git</h6>init -{'>'} remote -{'>'}  add -{'>'}  commit -{'>'} push <br/><br/> Not all, but <span className='greeting__accent'>99%</span> ;)</p>,
                 display: false,
+                activeColor: '#F1502F'
                 // pos: {
                 //     left: '700px',
                 //     top: '50px'
@@ -213,7 +221,7 @@ function GreetingSection() {
         // }
         // clearTimeout(autoShow.timer);
 
-        setDreams({techs: dreams.techs.map((t, i) => i == newCurrent ? {tech: t.tech, text: t.text, display: true, pos: t.pos} : {tech: t.tech, text: t.text, display: false, pos: t.pos})})
+        setDreams({techs: dreams.techs.map((t, i) => i == newCurrent ? {tech: t.tech, text: t.text, display: true, pos: t.pos, activeColor: t.activeColor} : {tech: t.tech, text: t.text, display: false, pos: t.pos, activeColor: t.activeColor})})
         setAutoShow({isActive: true, current: newCurrent, timer: setTimeout(handleNewRandHint, 5000)});
         
         
@@ -239,7 +247,6 @@ function GreetingSection() {
         document.getElementsByClassName('graph__doughnut')[0].style.pointerEvents = 'none';
 
         for (let i = 1; i <= document.getElementsByClassName('doughnut__headingAnimation').length; i++) {
-            console.log(i)
             i > 4 ? setTimeout(() => {document.getElementsByClassName(`doughnut__headingAnimation_${i}`)[0].style.opacity = 1;}, 100 + i*400) : setTimeout(() => {document.getElementsByClassName(`doughnut__headingAnimation_${i}`)[0].style.opacity = 1;}, 100 + i*300);
         }
 
@@ -247,7 +254,7 @@ function GreetingSection() {
     }                  
 
     function handleDoughnutIconHover(name) {
-        let newDreams = dreams.techs.map(t => t.tech === name ? {tech: t.tech, text: t.text, display: true, pos: t.pos} : {tech: t.tech, text: t.text, display: false, pos: t.pos});
+        let newDreams = dreams.techs.map(t => t.tech === name ? {tech: t.tech, text: t.text, display: true, pos: t.pos, activeColor: t.activeColor} : {tech: t.tech, text: t.text, display: false, pos: t.pos, activeColor: t.activeColor});
         setDreams({techs: newDreams});
         // clearTimeout(autoShow.timer);
         let highestTimeoutId = setTimeout(";");
@@ -260,7 +267,7 @@ function GreetingSection() {
 
 
     function handleDoughnutIconLeave(name) {
-        let newDreams = dreams.techs.map(t => t.tech === name ? {tech: t.tech, text: t.text, display: false, pos: t.pos} : t);
+        let newDreams = dreams.techs.map(t => t.tech === name ? {tech: t.tech, text: t.text, display: false, pos: t.pos, activeColor: t.activeColor} : t);
         setDreams({techs: newDreams});
         setTimeout(handleNewRandHint, 5000);
     }
@@ -290,9 +297,22 @@ function GreetingSection() {
                             <rect className='doughnut__doughnutProjectorRays_third' x="14" y="16.5209" width="3" height="20" rx="1.5" transform="rotate(-10 14 16.5209)" fill="#B0BDFF" fill-opacity="0.5"/>
                         </svg> */}
 
-                        <svg className='doughnut__doughnutProjectorRays doughnut__headingAnimation doughnut__headingAnimation_6' width="134" height="111" viewBox="0 0 134 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg  className='doughnut__doughnutProjectorRays doughnut__headingAnimation doughnut__headingAnimation_6' width="134" height="111" viewBox="0 0 134 111" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M66.5 110.5L0 0H134L66.5 110.5Z" fill="url(#paint0_linear)"/>
                         <defs>
+
+                            {/* {
+                                dreams.techs.map(t => {
+                                    if (t.display) return (
+                                        <linearGradient  style={{transition: '.5s'}} id="paint0_linear" x1="67" y1="0" x2="67" y2="110.5" gradientUnits="userSpaceOnUse">
+                                        <stop  style={{transition: '.5s'}} stop-color={t.activeColor} stop-opacity="0"/>
+                                        <stop  style={{transition: '.5s'}} offset="0.3125" stop-color={t.activeColor} stop-opacity="0.05"/>
+                                        <stop  style={{transition: '.5s'}} offset="0.640625" stop-color={t.activeColor} stop-opacity="0.2"/>
+                                        <stop  style={{transition: '.5s'}} offset="1" stop-color={t.activeColor} stop-opacity="0.65"/>
+                                        </linearGradient>
+                                    );
+                                })
+                            } */}
                         <linearGradient id="paint0_linear" x1="67" y1="0" x2="67" y2="110.5" gradientUnits="userSpaceOnUse">
                         <stop stop-color="#778FE4" stop-opacity="0"/>
                         <stop offset="0.3125" stop-color="#778FE4" stop-opacity="0.05"/>

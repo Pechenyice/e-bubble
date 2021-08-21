@@ -147,12 +147,20 @@
         text-indent: -20px;
     }
 
+    .hintBox__hint h6 {
+        text-align: center;
+        text-indent: 0px;
+        font-size: 24px;
+        margin: 0 0 20px 0;
+    }
+
     /* .doughnut__optionAnimation {
         animation: shaker 5s linear 0s infinite alternate;
     } */
 
     .hintBox__text {
         position: absolute;
+        width: 100%;
     }
 
     .personal__textBox_icons .textBox__isometric {
@@ -311,7 +319,8 @@
 
     .hintBox__hint {
         position: absolute;
-        left: calc(50% - 126px);
+        text-align: center;
+        left: calc(50% - 156px);
         top: calc(50%);
     }
 
