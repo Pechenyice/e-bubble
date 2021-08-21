@@ -99,7 +99,7 @@ function ProjectsSection() {
                     content: ['0.png']
                 },
                 link: {
-                    href: '#',
+                    href: 'https://github.com/Pechenyice/vkAnsweringBot',
                     icon: faGithub
                 }
             },
@@ -137,7 +137,7 @@ function ProjectsSection() {
                     content: ['0.png']
                 },
                 link: {
-                    href: '#',
+                    href: 'https://brassbook.ru/player',
                     icon: faInternetExplorer
                 }
             },
@@ -170,7 +170,7 @@ function ProjectsSection() {
                     content: ['0.png']
                 },
                 link: {
-                    href: '#',
+                    href: 'https://github.com/Pechenyice/pc-prebuilder',
                     icon: faGithub
                 }
             },
@@ -193,7 +193,7 @@ function ProjectsSection() {
                     content: ['0.png', '1.png', '2.png', '3.png', '4.png']
                 },
                 link: {
-                    href: '#',
+                    href: 'https://play.google.com/store/apps/details?id=com.rapidsoftware.spoconnection&hl=ru&gl=US',
                     icon: faGooglePlay
                 }
             },
@@ -226,7 +226,7 @@ function ProjectsSection() {
                     content: ['0.png', '1.png', '2.png', '3.png', '4.png']
                 },
                 link: {
-                    href: '#',
+                    href: 'https://spo-landing.herokuapp.com/',
                     icon: faInternetExplorer
                 }
             },
@@ -264,7 +264,7 @@ function ProjectsSection() {
                     content: ['0.png', '1.png']
                 },
                 link: {
-                    href: '#',
+                    href: 'https://github.com/Pechenyice/fapay',
                     icon: faGithub
                 }
             }
@@ -282,8 +282,8 @@ function ProjectsSection() {
 
         gallery.current.style.opacity = 0;
         prRays.current.style.opacity = 0;
-        prStatus.current.style.background = 'white';
-        prBriefly.current.style.background = 'white';
+        prStatus.current.style.background = '#FADE2B';
+        prBriefly.current.style.background = '#FADE2B';
 
         setTimeout(() => {
             setTimeout(() => {gallery.current.style.opacity = 1;prRays.current.style.opacity = 1;}, 100);
@@ -487,13 +487,13 @@ function ProjectsSection() {
 
                                 </div>
 
-                                {/* {
+                                {
                                     projects.list.map(p => {
                                         if (p.active) {
-                                            return <a href={p.link.href}><div className='projects__projectLink'><FontAwesomeIcon icon={p.link.icon} /></div></a>;
+                                            return <a target='_blank' href={p.link.href}><div className='projects__projectLink'><FontAwesomeIcon icon={p.link.icon} /><p className='projects__projectLinkText'>Link to project</p></div></a>;
                                         }
                                     }) 
-                                } */}
+                                }
                                 
                             </div>
                         </div>
