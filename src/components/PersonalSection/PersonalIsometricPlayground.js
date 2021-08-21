@@ -8,7 +8,7 @@ function PersonalIsometricPlayground() {
 
     return (
         <div className='personal__isometricBackground'>
-            <div className='personal__textBox textBox'>
+            <div className='personal__textBox personal__textBox_icons textBox'>
 
                 <div className='textBox__aside'>
 
