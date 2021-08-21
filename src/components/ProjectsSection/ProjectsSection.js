@@ -284,11 +284,13 @@ function ProjectsSection() {
         prRays.current.style.opacity = 0;
         prStatus.current.style.background = '#FADE2B';
         prBriefly.current.style.background = '#FADE2B';
+        prLink.current.style.color = '#FADE2B';
 
         setTimeout(() => {
             setTimeout(() => {gallery.current.style.opacity = 1;prRays.current.style.opacity = 1;}, 100);
             prStatus.current.style.background = 'unset';
             prBriefly.current.style.background = 'unset';
+            prLink.current.style.color = '#181818';
 
             let newProjects = projects.list.map(p => {
                 let tmp;
@@ -343,6 +345,7 @@ function ProjectsSection() {
     }
 
     let prStatus = useRef(null);
+    let prLink = useRef(null);
     let prBriefly = useRef(null);
     let gallery = useRef(null);
     let prRays = useRef(null);
@@ -352,6 +355,7 @@ function ProjectsSection() {
         prRays.current.style.opacity = 1;
         prBriefly.current.style.background = 'unset';
         prStatus.current.style.background = 'unset';
+        prLink.current.style.color = '#181818';
     }, []);
 
     return (
@@ -490,7 +494,7 @@ function ProjectsSection() {
                                 {
                                     projects.list.map(p => {
                                         if (p.active) {
-                                            return <a target='_blank' href={p.link.href}><div className='projects__projectLink'><FontAwesomeIcon icon={p.link.icon} /><p className='projects__projectLinkText'>Link to project</p></div></a>;
+                                            return <a className='projects__projectLinkWrapper' target='_blank' href={p.link.href}><div className='projects__projectLink'><span className='projects__projectBackground' ref={prLink}><FontAwesomeIcon icon={p.link.icon} /></span></div><p className='projects__projectLinkText'>link</p></a>;
                                         }
                                     }) 
                                 }

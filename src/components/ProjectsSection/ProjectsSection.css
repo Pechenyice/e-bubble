@@ -277,6 +277,7 @@
 .projects__projectStatus {
     width: 400px;
     height: 200px;
+    margin-left: 15px;
     font-size: 24px;
     display: flex;
     justify-content: space-between;
@@ -483,7 +484,7 @@
 
 .projects__projectTechs {
     display: flex;
-    gap: 20px;
+    gap: 10px;
     justify-content: flex-end;
     margin-top: 50px;
     height: 100px;
@@ -548,20 +549,28 @@
     transform: skewX(45deg) translate(5px, -10px);
 }
 
+.projects__projectsGalleryController:hover ~ .projects__galleryHint {
+    /* opacity: 1; */
+    transition: .3s;
+}
+
 .projects__galleryHint {
     position: absolute;
-    bottom: -60px;
+    bottom: -50px;
     left: -20px;
     width: 150px;
     text-align: center;
     transform: skewX(45deg);
     font-size: 24px;
+    opacity: .15;
+    transition: .3s;
 }
 
 .projects__projectLink {
     position: absolute;
-    bottom: 120px;
-    left: -370px;
+    z-index: 5;
+    bottom: 200px;
+    left: -880px;
     width: 40px;
     height: 40px;
     display: flex;
@@ -572,13 +581,13 @@
     color: #181818;
     background: #FADE2B;
     cursor: pointer;
-    transition: .3s;
+    transition: .5s;
 }
 
 .projects__projectLink::before {
     content: '';
     position: absolute;
-    z-index: 1;
+    z-index: 5;
     top: 0;
     left: 0;
     height: 100%;
@@ -591,7 +600,7 @@
 .projects__projectLink::after {
     content: '';
     position: absolute;
-    z-index: 1;
+    z-index: 5;
     top: 0;
     left: 0;
     height: 10px;
@@ -602,23 +611,26 @@
 }
 
 .projects__projectLink:hover {
-    transform: translate(-5px, -5px);
-    transition: .3s;
+    transform: translate(-16px, -16px);
+    transition: .5s;
 }
 
-.projects__projectLink:hover .projects__projectLinkText{
-    transform: translate(5px, 5px);
-    transition: .3s;
+.projects__projectLinkWrapper {
+    position: relative;
 }
 
 .projects__projectLinkText {
     position: absolute;
+    z-index: 0;
     text-decoration: unset;
     color: white;
-    width: 200px;
-    bottom: -70px;
-    left: -30px;
-    transition: .3s;
+    width: 40px;
+    height: 24px;
+    text-align: center;
+    bottom: 175px;
+    transform: skewX(45deg);
+    left: -888px;
+    font-size: 18px;
 }
 
 /* .projects__projectLink::before {
@@ -675,6 +687,11 @@
 .projectStatus__brieflyAnim {
     background: #FADE2B;
     transition: .3s;
+}
+
+.projects__projectBackground {
+    display: flex;
+    transition: color .3s;
 }
 
 .galleryProjectorRays {
