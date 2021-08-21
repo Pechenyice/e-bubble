@@ -10,10 +10,16 @@
 }
 
 .navigationSection__navWrapper {
-    transition: 1s;
+    color: rgba(255, 255, 255, .15);
+    transition: color .3s, transform 1s;
     transform: translateZ(0px);
 }
 
+.navigationSection__navWrapper:hover {
+    color: rgba(255, 255, 255, 1);
+    transition: color .3s, transform 1s;
+}
+ 
 .navigationSection__text {
     font-size: 18px;
     text-align: center;
@@ -26,10 +32,16 @@
     margin: 15px 0;
     margin-left: calc(50% - 20px);
     border-radius: 14px;
-    border: 2px solid white;
+    border: 2px solid rgba(255, 255, 255, .15);
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: .3s;
+}
+
+.navigationSection__navWrapper:hover .navigationSection__mouse{
+    border: 2px solid rgba(255, 255, 255, 1);
+    transition: .3s;
 }
 
 .mouse__wheel {
@@ -39,17 +51,35 @@
     width: 3px;
     height: 8px;
     border-radius: 2px;
+    background: rgba(255, 255, 255, .15);
+    transition: .3s;
+}
+
+.navigationSection__navWrapper:hover .mouse__wheel{
     background: white;
+    transition: .3s;
 }
 
 .mouse__arrow {
+    color: rgba(255,255,255,.15);
     font-size: 24px;
     padding-top: 10px;
-    transition: .3s;
+    transition: .3s !important;
+    transition-delay: 0s;
+}
+
+.navigationSection__navWrapper:hover .mouse__arrow {
+    color: rgba(255,255,255,1);
+    transition: .3s !important;
+    transition-delay: 0s;
+    transform: translate(0px, 0px);
+    animation: mouseTranslation .5s ease 0s 1 forwards;
 }
 
 .navigationSection__mouse:hover .mouse__arrow {
-    transition: .3s;
+    color: rgba(255,255,255,1);
+    transition: .3s !important;
+    transition-delay: 0s;
     transform: translate(0px, 0px);
     animation: mouseTranslation .5s ease 0s 1 forwards;
 }
@@ -134,7 +164,7 @@
 
 .lift__name {
     position: relative;
-    transform: translate(0px, 5px);
+    transform: skewX(-45deg) translate(0px, 7px);
     font-size: 24px;
     height: 36px;
     transition: .3s;

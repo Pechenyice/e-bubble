@@ -7,6 +7,8 @@ function NavigationSection() {
 
     function handleFastMoveClick(newView) {
         return () => {
+            if (newView == window.viewManager.activeView) return;
+
             if (!window.viewManager.isInAction) {
                 document.getElementsByClassName('lift__floor')[window.viewManager.activeView].classList.remove('lift__floor_active');
                 document.getElementsByClassName('lift__floor')[newView].classList.add('lift__floor_active');
@@ -20,14 +22,14 @@ function NavigationSection() {
 
             <div className='navigationSection__navWrapper'>
             
-                <div className='navigationSection__text'>
+                <div className='navigationSection__text navigationSection__hider'>
                     Use
                 </div>
-                <div className='navigationSection__mouse mouse'>
+                <div className='navigationSection__mouse mouse navigationSection__hider'>
                     <div className='mouse__wheel'></div>
                     <FontAwesomeIcon className='mouse__arrow' icon={faArrowsAltV} />
                 </div>
-                <div className='navigationSection__text'>
+                <div className='navigationSection__text navigationSection__hider'>
                     or
                 </div>
                 <div className='navigationSection__lift lift'>
@@ -61,7 +63,7 @@ function NavigationSection() {
                         </div>
                     </div>
                 </div>
-                <div className='navigationSection__text'>
+                <div className='navigationSection__text navigationSection__hider'>
                     for<br/>scroll
                 </div>
 
