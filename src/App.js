@@ -13,6 +13,8 @@ function App() {
 
     // console.log(window.scrollY > scrolled ? 'down' : 'top')
 
+    if (window.innerHeight < 650 || window.innerWidth < 1150) return;
+
     let direction = Math.sign(e.deltaY);
     
     if (!window.viewManager.isInAction) {
@@ -259,6 +261,8 @@ function App() {
 
   function viewManagerDirectViewSetter(prevView, newView) {
 
+    if (window.innerHeight < 650 || window.innerWidth < 1150) return;
+
     window.viewManager.activeView = newView;
     window.viewManager.isInAction = true;
 
@@ -361,6 +365,7 @@ function App() {
     
 
     window.addEventListener('mousewheel', handleScrollEffect);
+    window.addEventListener('resize', () => {if (window.innerHeight > 650 && window.innerWidth > 1150) window.scrollTo(0,0);}, {passive: true});
 
   }, []);
 

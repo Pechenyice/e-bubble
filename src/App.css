@@ -15,3 +15,494 @@ body {
   overflow: hidden;
 }
 
+
+
+
+
+
+
+
+
+
+@media screen and (max-height: 900px) {
+  .greeting__graph {
+      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-140px) !important;
+  }
+
+  .app__projects {
+      transform: scale(.9) !important;
+  }
+
+  .app__personal {
+      transform: scale(.9) !important;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .greeting__graph {
+      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-140px) scale(.9) !important;
+  }
+
+  .app__projects {
+      transform: scale(.8) !important;
+  }
+
+  .app__personal {
+      transform: scale(.8) !important;
+  }
+}
+
+@media screen and (max-height: 700px) {
+  .greeting__graph {
+      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-140px) scale(.8) !important;
+  }
+
+  .app__projects {
+      transform: scale(.7) !important;
+  }
+
+  .app__personal {
+      transform: scale(.7) !important;
+  }
+}
+
+@media screen and (max-height: 650px) {
+
+  body {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+
+  .app__navigationSection {
+    display: none !important;
+  }
+
+  .app__personalWrapperBox {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    pointer-events: auto;
+  }
+
+  .app__projectsWrapperBox {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    pointer-events: auto !important;
+  }
+
+  .app__personalWrapper {
+    transform: unset !important;
+  }
+
+  .app__projectsWrapper {
+    transform: unset !important;
+  }
+
+  .app__greetingWrapper {
+    transform: unset !important;
+  }
+
+  .greeting__isometricTextBox {
+    margin-right: 0px !important;
+  }
+
+  .app__greeting {
+      /* min-height: 100vh; */
+      height: 650px !important;
+  }
+
+  .greeting__graph {
+      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-130px) scale(.75) !important;
+  }
+
+  .app__personal {
+      transform: scale(1) !important;
+      /* min-height: 100vh; */
+      height: 650px !important;
+  }
+
+  .app__projects {
+      transform: scale(1) !important;
+      /* min-height: 100vh; */
+      height: 900px !important;
+      margin-bottom: -200px !important;
+  }
+
+  .personal__textBox:last-child {
+      margin-right: 0px !important;
+  }
+}
+
+
+
+
+
+
+
+@media screen and (max-width: 1700px) {
+  .navigationSection__hider {
+    opacity: 0 !important;
+    transition: .3s;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .navigationSection__hider {
+    opacity: 0 !important;
+    transition: .3s;
+  }
+
+  .greeting__graph {
+      margin-left: 100px;
+      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-130px) scale(.75) !important;
+  }
+
+  .doughnut__heading {
+    transform: scale(.7);
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  
+  .doughnut__heading {
+    font-size: 36px !important;
+  }
+
+  .doughnut__heading .greeting__accent {
+    font-size: 48px !important;
+  }
+
+  .doughnut__heading .doughnut__bigHeading {
+    font-size: 60px !important;
+  }
+
+  .greeting__graph {
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-90px) scale(.75) !important;
+  }
+
+  .personal__textBox {
+    transform: scale(.75) !important;
+  }
+
+  .app__projectsWrapperBox {
+    z-index: 10 !important;
+  }
+}
+
+@media screen and (max-width: 1260px) {
+  
+  .doughnut__heading {
+    width: 400px !important;
+    margin-right: 100px !important;
+    /* font-size: 30px !important; */
+  }
+
+  .doughnut__heading .greeting__accent {
+    /* font-size: 36px !important; */
+  }
+
+  .doughnut__heading .doughnut__bigHeading {
+    /* font-size: 42px !important; */
+    /* line-height: 100px !important; */
+  }
+
+}
+
+@media screen and (max-width: 1150px) {
+  
+  body {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+
+  .app__navigationSection {
+    display: none !important;
+  }
+
+  .app__personalWrapperBox {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    pointer-events: auto;
+  }
+
+  .app__projectsWrapperBox {
+    position: relative !important;
+    top: unset !important;
+    left: unset !important;
+    pointer-events: auto !important;
+  }
+
+  .app__personalWrapper {
+    transform: unset !important;
+  }
+
+  .app__projectsWrapper {
+    transform: unset !important;
+  }
+
+  .app__greetingWrapper {
+    transform: unset !important;
+  }
+
+  .greeting__isometricTextBox {
+    margin-right: 0px !important;
+  }
+
+  .app__greeting {
+      /* min-height: 100vh; */
+      height: 650px !important;
+  }
+
+  .greeting__graph {
+      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-90px) scale(.75) !important;
+  }
+
+  .app__personal {
+      transform: scale(1) !important;
+      /* min-height: 100vh; */
+      height: 900px !important;
+  }
+
+  .personal__textBox:last-child {
+      margin-right: 0px !important;
+  }
+
+  .personal__isometricBackground {
+    margin-top: -100px !important;
+  }
+
+  .app__personalWrapperBox {
+    height: 600px !important;
+  } 
+
+  .app__projects {
+    transform: scale(.8) !important;
+    height: 600px !important;
+    min-height: 600px !important;
+    margin-top: 200px;
+  }
+}
+
+@media screen and (max-width: 968px) {
+  .app__greeting {
+    flex-wrap: wrap !important;
+    height: 1050px !important;
+  }
+
+  .greeting__isometricTextBox {
+    order: 1 !important;
+    display: flex !important;
+    justify-content: center !important;
+  }
+
+  .doughnut__heading {
+    width: 600px !important;
+    font-size: 60px !important;
+  }
+
+  .doughnut__heading .greeting__accent {
+    font-size: 72px !important;
+  }
+
+  .doughnut__heading .doughnut__bigHeading {
+    font-size: 90px !important;
+  }
+
+  .doughnut__heading {
+    margin-right: 0px !important;
+    margin-left: 0px !important;
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+  }
+
+  .greeting__graph {
+    margin-left: 0px !important;
+    order: 2 !important;
+  }
+
+  .personal__isometricBackground {
+    margin-top: 100px !important;
+  }
+
+  .app__personalWrapperBox {
+    height: 2550px !important;
+  }
+
+  .personal__isometricBackground {
+    width: 300px !important;
+    flex-wrap: wrap !important;
+    height: 850px !important;
+  }
+
+  .personal__textBox {
+    height: 850px;
+    transform: scale(1) !important;
+  }
+
+  .app__projects {
+    transform: scale(1) !important;
+    height: 1100px !important;
+    min-height: 1100px !important;
+    margin-top: 100px;
+    margin-left: calc(50% - 150px);
+    width: 300px;
+  }
+
+  .projects__wrapper {
+    width: 100%;
+  }
+
+  .projectsList__blockName {
+    margin-left: 0px !important;
+  }
+
+  .projects__projectsList {
+    flex-wrap: wrap;
+    
+  }
+
+  .projects__projectStatus {
+    transform: scale(.7) !important;
+    margin-left: -45px;
+  }
+
+  .projects__projectTechs {
+    width: 300px;
+    justify-content: center;
+  }
+
+  .projects__projectGallery {
+    width: 300px !important;
+    position: absolute !important; 
+    left: 0 !important;
+    bottom: -400px !important;
+  }
+
+  .projects__projectGalleryImgWrapper {
+    width: 300px !important;
+    margin-left: -260px !important;
+  }
+
+  .projects__wrapper .projects__projectsGalleryControllerWrapper  {
+    right: 250px !important;
+    bottom: -150px !important;
+  }
+
+  .projects__wrapper .doughnut__doughnutProjector {
+    left: -120px !important;
+    bottom: unset !important;
+    top: -100px !important;
+  }
+
+  .projects__wrapper .doughnut__doughnutProjectorRays {
+    top: -110px !important;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .app__greeting {
+    /* min-height: 800px !important; */
+    height: 800px !important;
+  }
+
+  .doughnut__heading {
+    width: 450px !important;
+    font-size: 48px !important;
+  }
+
+  .doughnut__heading .greeting__accent {
+    font-size: 60px !important;
+  }
+
+  .doughnut__heading .doughnut__bigHeading {
+    font-size: 72px !important;
+  }
+
+  .greeting__graph {
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-200px) scale(.55) !important;
+  }
+
+  .personal__isometricBackground {
+    margin-top: -100px !important;
+  }
+
+  .personal__textBox {
+    margin-left: -20px;
+  }
+
+  .app__projects {
+    transform: scale(1) !important;
+    height: 900px !important;
+    min-height: 900px !important;
+    margin-top: 100px;
+    margin-left: calc(50% - 140px);
+    width: 300px;
+  }
+
+
+
+  
+}
+
+@media screen and (max-width: 400px) {
+
+  .doughnut__heading {
+    width: 400px !important;
+    font-size: 36px !important;
+  }
+
+  .doughnut__heading .greeting__accent {
+    font-size: 48px !important;
+  }
+
+  .doughnut__heading .doughnut__bigHeading {
+    font-size: 60px !important;
+  }
+
+  .greeting__graph {
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-200px) scale(.45) !important;
+  }
+
+  .app__personalWrapperBox {
+    height: 1950px !important;
+  }
+
+  .personal__isometricBackground {
+    height: 650px !important;
+    margin-top: -300px !important;
+  }
+
+  .personal__textBox {
+    height: 650px !important;
+    transform: scale(.7) !important;
+  }
+  
+  .app__projects {
+    transform: scale(.7) !important;
+    height: 700px !important;
+    min-height: 700px !important;
+  }
+
+  .app__personalWrapperBox {
+    height: 1850px !important;
+  }
+
+  .personal__isometricBackground {
+    height: 750px !important;
+  }
+
+  .personal__textBox {
+    height: 750px;
+  }
+
+  .projects__projectGalleryImgWrapper {
+    margin-left: -280px !important;
+  }
+
+  .projects__wrapper .projects__projectsGalleryControllerWrapper  {
+    right: 270px !important;
+  }
+}
