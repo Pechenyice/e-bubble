@@ -1,9 +1,13 @@
 import { faArrowsAltV } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React from "react";
+import React, { useEffect } from "react";
 import './NavigationSection.css';
 
 function NavigationSection() {
+
+    useEffect(() => {
+        setTimeout(() => {document.getElementsByClassName(`navigation__headingAnimation_${1}`)[0].style.opacity = 1;}, 4200)
+    }, []);
 
     function handleFastMoveClick(newView) {
         return () => {
@@ -18,7 +22,7 @@ function NavigationSection() {
     }
 
     return (
-        <section className='app__navigationSection navigationSection'>
+        <section className='app__navigationSection navigationSection navigation__headingAnimation navigation__headingAnimation_1'>
 
             <div className='navigationSection__navWrapper'>
             

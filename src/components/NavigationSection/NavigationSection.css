@@ -180,6 +180,11 @@
     transition: .5s;
 }
 
+.navigation__headingAnimation {
+    opacity: 0;
+    transition: .3s;
+}
+
 @keyframes mouseTranslation {
     0% {
         transform: translate(0px, 0px);
