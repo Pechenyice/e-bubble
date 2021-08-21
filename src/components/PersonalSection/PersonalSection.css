@@ -5,7 +5,16 @@
     justify-content: center; 
 }
 
-.personal__awesomeBackground {
+.app__personalWrapperBox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    perspective: 10000px;
+    width: 100%;
+    pointer-events: none;
+}
+
+/* .personal__awesomeBackground {
     position: fixed;
     top: 0;
     left: 0;
@@ -17,7 +26,7 @@
     transition: opacity 1s;
     animation: backgrounder 15s linear 0s infinite alternate;
 
-}
+} */
 
 .personal__textBox {
     width: 312px;
