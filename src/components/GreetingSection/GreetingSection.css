@@ -155,8 +155,17 @@
         position: absolute;
     }
 
-    .textBox__isometric {
+    .personal__textBox_icons .textBox__isometric {
+        width: 300px;
+        margin-left: 15px;
         /* height: 200px; */
+        margin-top: 90px;
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .textBox__isometric {
         margin-top: 90px;
         display: flex;
         align-items: center;
@@ -203,7 +212,7 @@
         opacity: 1;
         text-align: center;
         font-size: 36px;
-        transform: skewX(45deg) translate(65px, -70px);
+        transform: skewX(45deg) translate(65px, -75px);
         letter-spacing: 0.03em;
     }
 
@@ -216,6 +225,7 @@
         height: 100%;
         width: 20px;
         background: var(--pseudoColor);
+        filter: brightness(.5);
         transform: skewY(45deg) translate(-20px, 10px);
     }
 
@@ -228,6 +238,7 @@
         height: 20px;
         width: 100%;
         background: var(--pseudoColor);
+        filter: brightness(.5);
         transform: skewX(45deg) translate(10px, -20px);
     }
 
@@ -494,6 +505,11 @@
     .doughnut__doughnutProjectorRays_third {
         transition: .3s;
         animation: opacityRaysThird 5s linear 0s infinite forwards;
+    }
+
+    .doughnut__headingAnimation {
+        opacity: 0;
+        transition: .3s;
     }
 
     @keyframes opacityRaysMain {

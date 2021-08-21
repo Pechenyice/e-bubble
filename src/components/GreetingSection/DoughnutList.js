@@ -6,7 +6,7 @@ import { faAtom, faDatabase } from "@fortawesome/free-solid-svg-icons";
 function DoughnutList({dreams, onHover, onLeave}) {
 
     return (
-        <div>
+        <div className='doughnut__headingAnimation doughnut__headingAnimation_8'>
 
             <DoughnutOption
                 dreams={dreams}

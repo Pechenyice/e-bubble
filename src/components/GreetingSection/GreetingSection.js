@@ -221,6 +221,8 @@ function GreetingSection() {
          
     useEffect(() => {
 
+        startGreetingAnimation();
+
         let timer = setTimeout(handleNewRandHint, 5000);
 
         return () => clearTimeout(timer);
@@ -229,7 +231,20 @@ function GreetingSection() {
     }, []);
 
 
-                      
+
+
+
+    function startGreetingAnimation() {
+
+        document.getElementsByClassName('graph__doughnut')[0].style.pointerEvents = 'none';
+
+        for (let i = 1; i <= document.getElementsByClassName('doughnut__headingAnimation').length; i++) {
+            console.log(i)
+            i > 4 ? setTimeout(() => {document.getElementsByClassName(`doughnut__headingAnimation_${i}`)[0].style.opacity = 1;}, 100 + i*400) : setTimeout(() => {document.getElementsByClassName(`doughnut__headingAnimation_${i}`)[0].style.opacity = 1;}, 100 + i*300);
+        }
+
+        setTimeout(() => {document.getElementsByClassName('graph__doughnut')[0].style.pointerEvents = 'auto';}, 4000)
+    }                  
 
     function handleDoughnutIconHover(name) {
         let newDreams = dreams.techs.map(t => t.tech === name ? {tech: t.tech, text: t.text, display: true, pos: t.pos} : {tech: t.tech, text: t.text, display: false, pos: t.pos});
@@ -262,7 +277,7 @@ function GreetingSection() {
                 <div className='graph__doughnut doughnut'>
 
                     <div className='doughnut__doughnutProjector'>
-                        <div className='doughnut__doughnutProjectorDecorator'></div>
+                        <div className='doughnut__doughnutProjectorDecorator doughnut__headingAnimation doughnut__headingAnimation_5'></div>
 
 
                         {/* <svg className='doughnut__doughnutProjectorRays' width="58" height="67" viewBox="0 0 58 67" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -275,7 +290,7 @@ function GreetingSection() {
                             <rect className='doughnut__doughnutProjectorRays_third' x="14" y="16.5209" width="3" height="20" rx="1.5" transform="rotate(-10 14 16.5209)" fill="#B0BDFF" fill-opacity="0.5"/>
                         </svg> */}
 
-                        <svg className='doughnut__doughnutProjectorRays' width="134" height="111" viewBox="0 0 134 111" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className='doughnut__doughnutProjectorRays doughnut__headingAnimation doughnut__headingAnimation_6' width="134" height="111" viewBox="0 0 134 111" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M66.5 110.5L0 0H134L66.5 110.5Z" fill="url(#paint0_linear)"/>
                         <defs>
                         <linearGradient id="paint0_linear" x1="67" y1="0" x2="67" y2="110.5" gradientUnits="userSpaceOnUse">
@@ -298,7 +313,7 @@ function GreetingSection() {
 
                         <DoughnutList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave} />
 
-                        <svg width="531" height="531" viewBox="0 0 531 531" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg className='doughnut__headingAnimation doughnut__headingAnimation_7' width="531" height="531" viewBox="0 0 531 531" fill="none" xmlns="http://www.w3.org/2000/svg">
                             {
                                 svgs.svgList.map((s, i) => {
 
@@ -339,7 +354,7 @@ function GreetingSection() {
 
                     <h1 className='doughnut__heading'>
                         <span className='doughnut__headingWrapper'>
-                            Hello, I’m<br/><span className='greeting__accent doughnut__bigHeading'>German Iskhakov</span><br/>the <span className='greeting__accent'>web developer</span>
+                        <span className='doughnut__headingAnimation doughnut__headingAnimation_1'>Hello,</span> <span className='doughnut__headingAnimation doughnut__headingAnimation_2'>I’m</span><br/><span className='greeting__accent doughnut__bigHeading doughnut__headingAnimation doughnut__headingAnimation_3'>German Iskhakov</span><br/><span className='doughnut__headingAnimation doughnut__headingAnimation_4'>the <span className='greeting__accent'>web developer</span></span>
                         </span>
                     </h1>
 
