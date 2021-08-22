@@ -7,6 +7,7 @@
 
 .app__projectsWrapperBox {
     position: absolute;
+    z-index: 10;
     top: 0;
     left: 0;
     perspective: 10000px;
@@ -164,7 +165,7 @@
     transform: translate(0, 0);
     transition: .3s;
     /* cursor: pointer; */
-    cursor: url('../../cursors/cursor_click.png') 24 25, auto;
+    cursor: url('../../cursors/cursor_click.svg') , auto;
     box-shadow: -52px -52px 40px rgba(195, 65, 228, 0);
 }
 
@@ -445,7 +446,7 @@
     justify-content: center;
     font-size: 14px;
     /* cursor: pointer; */
-    cursor: url('../../cursors/cursor_click.png') 24 25, auto;
+    cursor: url('../../cursors/cursor_click.svg') , auto;
     transition: .3s;
 }   
 
@@ -585,7 +586,7 @@
     color: #181818;
     background: #FADE2B;
     /* cursor: pointer; */
-    cursor: url('../../cursors/cursor_click.png') 24 25, auto;
+    cursor: url('../../cursors/cursor_click.svg') , auto;
     transition: .5s;
 }
 
