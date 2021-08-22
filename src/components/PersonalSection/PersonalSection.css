@@ -242,7 +242,7 @@
 
 .isometric__skillRating:hover {
     transform: translate(0, -2px);
-    transition: .1s;
+    transition: .1s ease-out;
 }
 
 .isometric__skillRating::before {
