@@ -1,6 +1,6 @@
 .app__navigationSection {
     position: fixed;
-    z-index: 5;
+    z-index: 15;
     right: 120px;
     top: calc(50vh - 200px);
     width: 100px;
