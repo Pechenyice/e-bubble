@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/e-bubble/static/css/main.1de136dc.chunk.css",
+    "main.css": "/e-bubble/static/css/main.a53ccd71.chunk.css",
     "main.js": "/e-bubble/static/js/main.7eb1f852.chunk.js",
     "main.js.map": "/e-bubble/static/js/main.7eb1f852.chunk.js.map",
     "runtime-main.js": "/e-bubble/static/js/runtime-main.5fbc06f4.js",
@@ -8,16 +8,16 @@
     "static/js/2.6e1d0bec.chunk.js": "/e-bubble/static/js/2.6e1d0bec.chunk.js",
     "static/js/2.6e1d0bec.chunk.js.map": "/e-bubble/static/js/2.6e1d0bec.chunk.js.map",
     "index.html": "/e-bubble/index.html",
-    "static/css/main.1de136dc.chunk.css.map": "/e-bubble/static/css/main.1de136dc.chunk.css.map",
+    "static/css/main.a53ccd71.chunk.css.map": "/e-bubble/static/css/main.a53ccd71.chunk.css.map",
     "static/js/2.6e1d0bec.chunk.js.LICENSE.txt": "/e-bubble/static/js/2.6e1d0bec.chunk.js.LICENSE.txt",
     "static/media/ProjectsSection.css": "/e-bubble/static/media/cursor_click.039b0e60.svg",
     "static/media/GreetingSection.css": "/e-bubble/static/media/cursor_default.81b4c228.svg",
-    "static/media/NavigationSection.css": "/e-bubble/static/media/cursor_pointer.1da6db02.svg"
+    "static/media/NavigationSection.css": "/e-bubble/static/media/cursor_pointer.404a1040.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.5fbc06f4.js",
     "static/js/2.6e1d0bec.chunk.js",
-    "static/css/main.1de136dc.chunk.css",
+    "static/css/main.a53ccd71.chunk.css",
     "static/js/main.7eb1f852.chunk.js"
   ]
 }
