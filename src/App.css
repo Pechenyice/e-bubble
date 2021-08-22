@@ -9,17 +9,32 @@ body {
   font-size: 18px;
   letter-spacing: 0.03em;
   overflow-x: hidden;
-
+  cursor: url('./cursors/cursor_default.png'), auto;
 
 
   overflow: hidden;
+}
+
+a {
+  cursor: url('./cursors/cursor_click.png') 24 25, auto;
 }
 
 * {
   -webkit-tap-highlight-color: transparent;
 }
 
-
+.cursorWrapper {
+  width: 200px;
+  height: 200px;
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: radial-gradient(50% 50% at 50% 50%, rgba(250, 222, 43, 0.336) 0%, rgba(250, 222, 43, 0) 80%);
+  filter: blur(33px);
+  pointer-events: none;
+  z-index: 100;
+}
 
 
 
@@ -164,8 +179,8 @@ body {
     transform: scale(.7);
   }
 
-  .app__projectsWrapperBox {
-    z-index: 10 !important;
+  .projects__projectGallery {
+    z-index: 6 !important;
   }
 }
 

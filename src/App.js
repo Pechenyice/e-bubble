@@ -4,6 +4,7 @@ import GreetingSection from './components/GreetingSection/GreetingSection';
 import PersonalSection from './components/PersonalSection/PersonalSection';
 import ProjectsSection from "./components/ProjectsSection/ProjectsSection";
 import NavigationSection from "./components/NavigationSection/NavigationSection";
+import CursorBackgroundEffect from "./cursors/CursorBackgroundEffect";
 
 function App() {
 
@@ -367,29 +368,87 @@ function App() {
     window.addEventListener('mousewheel', handleScrollEffect);
     window.addEventListener('resize', () => { if (window.innerHeight > 650 && window.innerWidth > 1150) {
         window.scrollTo(0,0);
+
+        switch (window.viewManager.activeView) {
+          case 0: {
+            window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='1';
+            window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='0';
+            window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='0';
+            break;
+          }
+  
+          case 1: {
+            window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='0';
+            window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='1';
+            window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='0';
+            break;
+          }
+  
+          case 2: {
+            window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='0';
+            window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='0';
+            window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='1';
+            break;
+          }
+        }
+
       } else {
         window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='auto';
         window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='auto';
         window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='auto';
+
+        
+
       } },
     {passive: true});
 
     window.addEventListener('DOMContentLoaded', () => { if (window.innerHeight > 650 && window.innerWidth > 1150) {
       window.scrollTo(0,0);
+
+      switch (window.viewManager.activeView) {
+        case 0: {
+          window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='1';
+          window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='0';
+          window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='0';
+          break;
+        }
+
+        case 1: {
+          window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='0';
+          window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='1';
+          window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='0';
+          break;
+        }
+
+        case 2: {
+          window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='0';
+          window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='0';
+          window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='1';
+          break;
+        }
+      }
+
     } else {
       window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='auto';
       window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='auto';
       window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='auto';
+
+      
+
     } });
 
   }, []);
 
   return (
     <section className="app" >
-      <NavigationSection />
+      
       <GreetingSection />
       <PersonalSection />
       <ProjectsSection />
+      <NavigationSection />
+
+      <CursorBackgroundEffect />
+
     </section>
   );
 
