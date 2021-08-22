@@ -217,7 +217,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    cursor: pointer;
+    /* cursor: pointer; */
+    cursor: url('../../cursors/cursor_pointer.png'), auto;
 }
 
 .isometric__skillRatingWrapper {
