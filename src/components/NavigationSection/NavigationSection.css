@@ -100,7 +100,7 @@
     height: 15px;
     margin: 20px 0;
     /* cursor: pointer; */
-    cursor: url('../../cursors/cursor_pointer.png'), auto;
+    cursor: url('../../cursors/cursor_pointer.svg'), auto;
 }
 
 .lift__floor_active .lift__box {
