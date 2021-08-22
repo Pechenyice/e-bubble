@@ -204,8 +204,6 @@ a {
   .projects__projectGallery {
     z-index: 6 !important;
   }
-
-  
 }
 
 @media screen and (max-width: 1450px) {
@@ -230,6 +228,9 @@ a {
     transform: scale(.75) !important;
   }
 
+  .app__navigationSection {
+    z-index: 5 !important;
+  }
 }
 
 @media screen and (max-width: 1260px) {
