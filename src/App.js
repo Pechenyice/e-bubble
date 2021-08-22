@@ -374,6 +374,7 @@ function App() {
             window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='1';
             window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='0';
             window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='0';
+            window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='auto';
             break;
           }
   
@@ -387,13 +388,13 @@ function App() {
           case 2: {
             window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='0';
             window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='0';
-            window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='1';
+            window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='10';
             break;
           }
         }
 
       } else {
-        window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='auto';
+        window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='none';
         window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='auto';
         window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='auto';
 
@@ -409,27 +410,27 @@ function App() {
         case 0: {
           window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='1';
           window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='0';
-          window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='0';
+          window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='10';
           break;
         }
 
         case 1: {
           window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='0';
           window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='1';
-          window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='0';
+          window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='10';
           break;
         }
 
         case 2: {
-          window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='0';
-          window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='0';
-          window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='1';
+          window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.zIndex='10';
+          window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.zIndex='10';
+          window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.zIndex='11';
           break;
         }
       }
 
     } else {
-      window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='auto';
+      window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='none';
       window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='auto';
       window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='auto';
 

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
 
+html {
+  cursor: url('./cursors/cursor_default.svg'), auto;
+}
+
 body {
   background-color: #181818;
   color: white;
@@ -9,14 +13,14 @@ body {
   font-size: 18px;
   letter-spacing: 0.03em;
   overflow-x: hidden;
-  cursor: url('./cursors/cursor_default.png'), auto;
+  cursor: url('./cursors/cursor_default.svg'), auto;
 
 
   overflow: hidden;
 }
 
 a {
-  cursor: url('./cursors/cursor_click.png') 24 25, auto;
+  cursor: url('./cursors/cursor_click.svg') , auto;
 }
 
 * {
@@ -34,8 +38,18 @@ a {
   filter: blur(33px);
   pointer-events: none;
   z-index: 100;
+  animation: scale 5s linear infinite alternate;
 }
 
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
 
 
 
@@ -149,6 +163,13 @@ a {
   .personal__textBox:last-child {
       margin-right: 0px !important;
   }
+
+  .smallScreenAdvice {
+    display: block !important;
+    margin-left: 50% !important;
+    width: calc(50% - 156px) !important;
+    transform: scale(.8) translateY(50px) !important;
+  }
 }
 
 
@@ -162,6 +183,7 @@ a {
     opacity: 0 !important;
     transition: .3s;
   }
+
 }
 
 @media screen and (max-width: 1600px) {
@@ -182,6 +204,8 @@ a {
   .projects__projectGallery {
     z-index: 6 !important;
   }
+
+  
 }
 
 @media screen and (max-width: 1450px) {
@@ -206,7 +230,6 @@ a {
     transform: scale(.75) !important;
   }
 
-  
 }
 
 @media screen and (max-width: 1260px) {
@@ -224,6 +247,13 @@ a {
   .doughnut__heading .doughnut__bigHeading {
     /* font-size: 42px !important; */
     /* line-height: 100px !important; */
+  }
+
+  .smallScreenAdvice {
+    width: 312px !important;
+    margin-left: 100px !important;
+    /* margin-right: 0px !important; */
+    transform: scale(.8) translateY(50px) !important;
   }
 
 }
@@ -303,12 +333,19 @@ a {
     min-height: 600px !important;
     margin-top: 200px;
   }
+
+  .smallScreenAdvice {
+    display: block !important;
+    width: 312px !important;
+    margin-left: 36px !important;
+    transform: scale(.8) translateY(50px) !important;
+  }
 }
 
 @media screen and (max-width: 968px) {
   .app__greeting {
     flex-wrap: wrap !important;
-    height: 1050px !important;
+    height: 1250px !important;
   }
 
   .greeting__isometricTextBox {
@@ -338,6 +375,7 @@ a {
   }
 
   .greeting__graph {
+    height: 1100px !important;
     margin-left: 0px !important;
     order: 2 !important;
   }
@@ -390,7 +428,7 @@ a {
 
   .projects__projectTechs {
     width: 300px;
-    justify-content: center !important;
+    /* justify-content: center !important; */
   }
 
   .projects__projectGallery {
@@ -421,20 +459,31 @@ a {
   }
 
   .projects__projectLink {
-    bottom: -150px !important;
-    left: 0px !important;
+    bottom: 650px !important;
+    left: -135px !important;
+  }
+  
+  .projects__projectLinkText {
+    bottom: 628px !important;
+    left: -145px !important;
   }
 
   .projects__projectStatus {  
     margin-left: -50px !important;
   }
 
+
+  .smallScreenAdvice {
+    display: block !important;
+    margin-left: calc(50% - 156px) !important;
+    transform: scale(.8) translateY(80px) !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .app__greeting {
     /* min-height: 800px !important; */
-    height: 800px !important;
+    height: 1000px !important;
   }
 
   .doughnut__heading {
@@ -453,6 +502,7 @@ a {
   }
 
   .greeting__graph {
+    height: 800px !important;
     margin-top: 50px !important;
     transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-200px) scale(.55) !important;
   }
@@ -475,7 +525,11 @@ a {
   }
 
 
-
+  .smallScreenAdvice {
+    display: block !important;
+    margin-left: calc(50% - 156px) !important;
+    transform: scale(.7) translateY(0px) !important;
+  }
   
 }
 
@@ -487,7 +541,7 @@ a {
   }
 
   .app__greeting {
-    height: 700px !important;
+    height: 950px !important;
   }
 
   .doughnut__heading {
@@ -561,5 +615,15 @@ a {
 
   .projects__projectGallery {
     margin-left: 0px !important;
+  }
+
+  .projects__projectLink {
+    bottom: 670px !important;
+    left: -115px !important;
+  }
+  
+  .projects__projectLinkText {
+    bottom: 648px !important;
+    left: -125px !important;
   }
 }
