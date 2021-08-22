@@ -32,8 +32,8 @@ a {
   height: 200px;
   border-radius: 50px;
   position: absolute;
-  top: 0;
-  left: 0;
+  top: -200px;
+  left: -200px;
   background: radial-gradient(50% 50% at 50% 50%, rgba(250, 222, 43, 0.336) 0%, rgba(250, 222, 43, 0) 80%);
   filter: blur(33px);
   pointer-events: none;
