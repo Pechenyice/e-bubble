@@ -1,5 +1,9 @@
     @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
+    .app__projectsWrapperBox {
+        position: relative;
+    }
+    
     .app__greeting {
         width: 100%;
         /* min-height: 100vh; */
@@ -74,7 +78,8 @@
 
     .doughnut__option {
         position: absolute;
-        cursor: pointer;
+        /* cursor: pointer; */
+        cursor: url('../../cursors/cursor_pointer.png'), auto;
     }
 
     .doughnut__optionLogo {
@@ -140,7 +145,8 @@
         transition: .2s;
         transition-timing-function: ease-in-out;
         transition-delay: .1s;
-        cursor: default;
+        /* cursor: default; */
+        cursor: url('../../cursors/cursor_default.png'), auto;
         animation: shaker 5s linear 0s infinite alternate;
         display: flex;
         align-items: center;
@@ -252,7 +258,8 @@
 
     .graph__cell {
         transition: .5s;
-        cursor: pointer;
+        /* cursor: pointer; */
+        cursor: url('../../cursors/cursor_pointer.png'), auto;
     }
 
 
@@ -395,7 +402,8 @@
         justify-content: center;
         transform: translate(0, 0);
         transition: .3s;
-        cursor: pointer;
+        /* cursor: pointer; */
+        cursor: url('../../cursors/cursor_pointer.png'), auto;
     }
 
     .isometricTextBox__option_chosen {
