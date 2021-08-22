@@ -163,6 +163,10 @@ body {
   .doughnut__heading {
     transform: scale(.7);
   }
+
+  .app__projectsWrapperBox {
+    z-index: 10 !important;
+  }
 }
 
 @media screen and (max-width: 1450px) {
@@ -187,9 +191,7 @@ body {
     transform: scale(.75) !important;
   }
 
-  .app__projectsWrapperBox {
-    z-index: 10 !important;
-  }
+  
 }
 
 @media screen and (max-width: 1260px) {
@@ -463,6 +465,11 @@ body {
 }
 
 @media screen and (max-width: 400px) {
+
+  .app {
+    width: 90%;
+    margin-left: 4%;
+  }
 
   .app__greeting {
     height: 700px !important;
