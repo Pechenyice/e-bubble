@@ -394,7 +394,7 @@ function App() {
         }
 
       } else {
-        window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='none';
+        window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='auto';
         window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='auto';
         window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='auto';
 
@@ -430,7 +430,7 @@ function App() {
       }
 
     } else {
-      window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='none';
+      window.document.getElementsByClassName('app__greetingWrapper')[0].parentElement.style.pointerEvents='auto';
       window.document.getElementsByClassName('app__personalWrapper')[0].parentElement.style.pointerEvents='auto';
       window.document.getElementsByClassName('app__projectsWrapper')[0].parentElement.style.pointerEvents='auto';
 
