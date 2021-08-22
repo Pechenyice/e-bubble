@@ -79,7 +79,7 @@
     .doughnut__option {
         position: absolute;
         /* cursor: pointer; */
-        cursor: url('../../cursors/cursor_pointer.png'), auto;
+        cursor: url('../../cursors/cursor_pointer.svg'), auto;
     }
 
     .doughnut__optionLogo {
@@ -146,7 +146,7 @@
         transition-timing-function: ease-in-out;
         transition-delay: .1s;
         /* cursor: default; */
-        cursor: url('../../cursors/cursor_default.png'), auto;
+        cursor: url('../../cursors/cursor_default.svg') 15 16, auto;
         animation: shaker 5s linear 0s infinite alternate;
         display: flex;
         align-items: center;
@@ -259,7 +259,7 @@
     .graph__cell {
         transition: .5s;
         /* cursor: pointer; */
-        cursor: url('../../cursors/cursor_pointer.png'), auto;
+        cursor: url('../../cursors/cursor_pointer.svg'), auto;
     }
 
 
@@ -403,7 +403,7 @@
         transform: translate(0, 0);
         transition: .3s;
         /* cursor: pointer; */
-        cursor: url('../../cursors/cursor_pointer.png'), auto;
+        cursor: url('../../cursors/cursor_pointer.svg'), auto;
     }
 
     .isometricTextBox__option_chosen {
@@ -527,6 +527,80 @@
     .doughnut__headingAnimation {
         opacity: 0;
         transition: .3s;
+    }
+
+    .isometricTextBox__mainTextBox {
+        position: relative;
+    }
+
+    .smallScreenAdvice {
+        /* z-index: 10; */
+        /* position: absolute; */
+        width: 312px;
+        display: none;
+        opacity: 0;
+        transition: .3s;
+    }
+
+    .smallScreenAdvice__text {
+        width: calc(312px - 48px);
+        background: #FADE2B;
+        color: black;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 26px;
+        padding: 24px;
+        margin: 0;
+    }
+
+    .smallScreenAdvice__text p {
+        padding: 0;
+        margin: 0;
+    }
+
+    .smallScreenAdvice__list {
+        width: 312px;
+        padding-left: 10px;
+        display: flex;
+        margin-top: 50px;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .screenSize {
+        position: relative;
+        z-index: 1;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-weight: 500;
+        line-height: 27px;
+    }
+
+    .screenName {
+        position: absolute;
+        top: -60px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .screenExample {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+    }
+
+    .screenExample img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
     }
 
     @keyframes opacityRaysMain {

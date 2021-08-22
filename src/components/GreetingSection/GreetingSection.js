@@ -4,6 +4,7 @@ import DoughnutList from "./DoughnutList";
 import HintsList from "./HintsList";
 import GreetingTechHint from "./GreetingTechHint";
 import IsometricHeading from "../PersonalSection/IsometricHeading";
+import SmallScreenAdviceExample from "./SmallScreenAdviceExample";
 
 //TODO: Create normal system of timeouts for doughnut graph, now implementation is shockingly awful
 
@@ -244,13 +245,15 @@ function GreetingSection() {
 
     function startGreetingAnimation() {
 
-        document.getElementsByClassName('graph__doughnut')[0].style.pointerEvents = 'none';
+        document.getElementsByClassName('app__greetingWrapperBox')[0].style.pointerEvents = 'none';
 
         for (let i = 1; i <= document.getElementsByClassName('doughnut__headingAnimation').length; i++) {
             i > 4 ? setTimeout(() => {document.getElementsByClassName(`doughnut__headingAnimation_${i}`)[0].style.opacity = 1;}, 100 + i*400) : setTimeout(() => {document.getElementsByClassName(`doughnut__headingAnimation_${i}`)[0].style.opacity = 1;}, 100 + i*300);
         }
 
-        setTimeout(() => {document.getElementsByClassName('graph__doughnut')[0].style.pointerEvents = 'auto';}, 4000)
+        setTimeout(() => {document.getElementsByClassName('smallScreenAdvice')[0].style.opacity = '1';}, 4000);
+        setTimeout(() => {document.getElementsByClassName('app__greetingWrapperBox')[0].style.pointerEvents = 'auto';}, 4300);
+        
     }                  
 
     function handleDoughnutIconHover(name) {
@@ -370,7 +373,7 @@ function GreetingSection() {
 
             <div className='greeting__isometricTextBox isometricTextBox'>
 
-                <div>
+                <div className='isometricTextBox__mainTextBox'>
 
                     <h1 className='doughnut__heading'>
                         <span className='doughnut__headingWrapper'>
@@ -382,7 +385,15 @@ function GreetingSection() {
 
                     <HintsList dreams={dreams} onHover={handleDoughnutIconHover} onLeave={handleDoughnutIconLeave} /> */}
 
-                    
+                    <div className='smallScreenAdvice'>
+                        <div className='smallScreenAdvice__text'>
+                            <p>for better experience,<br/>recommended bigger screen</p>
+                        </div>
+                        <div className='smallScreenAdvice__list'>
+                            <SmallScreenAdviceExample styles={{width: '80px', height: '70px', fontSize: '16px'}} defaultSize={`${window.innerWidth}x${window.innerHeight}`} shouldScan={true} name='Current'/>
+                            <SmallScreenAdviceExample styles={{width: '100px', height: '90px'}} defaultSize='1150x650' name='Target' />
+                        </div>
+                    </div>
 
                 </div>
 
