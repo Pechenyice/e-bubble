@@ -570,7 +570,7 @@
     position: absolute;
     z-index: 5;
     bottom: 200px;
-    left: -880px;
+    left: -888px;
     width: 40px;
     height: 40px;
     display: flex;
@@ -629,7 +629,7 @@
     text-align: center;
     bottom: 175px;
     transform: skewX(45deg);
-    left: -888px;
+    left: -896px;
     font-size: 18px;
 }
 
