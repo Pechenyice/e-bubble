@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
 
+html {
+  cursor: url('./cursors/cursor_default.svg'), auto;
+}
+
 body {
   background-color: #181818;
   color: white;
@@ -9,14 +13,13 @@ body {
   font-size: 18px;
   letter-spacing: 0.03em;
   overflow-x: hidden;
-  cursor: url('./cursors/cursor_default.png'), auto;
-
+  cursor: url('./cursors/cursor_default.svg'), auto;
 
   overflow: hidden;
 }
 
 a {
-  cursor: url('./cursors/cursor_click.png') 24 25, auto;
+  cursor: url('./cursors/cursor_click.svg'), auto;
 }
 
 * {
@@ -28,63 +31,72 @@ a {
   height: 200px;
   border-radius: 50px;
   position: absolute;
-  top: 0;
-  left: 0;
-  background: radial-gradient(50% 50% at 50% 50%, rgba(250, 222, 43, 0.336) 0%, rgba(250, 222, 43, 0) 80%);
+  top: -200px;
+  left: -200px;
+  background: radial-gradient(
+    50% 50% at 50% 50%,
+    rgba(250, 222, 43, 0.336) 0%,
+    rgba(250, 222, 43, 0) 80%
+  );
   filter: blur(33px);
   pointer-events: none;
   z-index: 100;
+  animation: scale 5s linear infinite alternate;
 }
 
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
 
-
-
-
+  to {
+    transform: scale(1.2);
+  }
+}
 
 @media screen and (max-height: 900px) {
   .greeting__graph {
-      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-140px) !important;
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-140px) !important;
   }
 
   .app__projects {
-      transform: scale(.9) !important;
+    transform: scale(0.9) !important;
   }
 
   .app__personal {
-      transform: scale(.9) !important;
+    transform: scale(0.9) !important;
   }
 }
 
 @media screen and (max-height: 800px) {
   .greeting__graph {
-      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-140px) scale(.9) !important;
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-140px) scale(0.9) !important;
   }
 
   .app__projects {
-      transform: scale(.8) !important;
+    transform: scale(0.8) !important;
   }
 
   .app__personal {
-      transform: scale(.8) !important;
+    transform: scale(0.8) !important;
   }
 }
 
 @media screen and (max-height: 700px) {
   .greeting__graph {
-      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-140px) scale(.8) !important;
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-140px) scale(0.8) !important;
   }
 
   .app__projects {
-      transform: scale(.7) !important;
+    transform: scale(0.7) !important;
   }
 
   .app__personal {
-      transform: scale(.7) !important;
+    transform: scale(0.7) !important;
   }
 }
 
 @media screen and (max-height: 650px) {
-
   body {
     overflow: auto;
     overflow-x: hidden;
@@ -125,58 +137,59 @@ a {
   }
 
   .app__greeting {
-      /* min-height: 100vh; */
-      height: 650px !important;
+    /* min-height: 100vh; */
+    height: 650px !important;
   }
 
   .greeting__graph {
-      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-130px) scale(.75) !important;
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-130px) scale(0.75) !important;
   }
 
   .app__personal {
-      transform: scale(1) !important;
-      /* min-height: 100vh; */
-      height: 650px !important;
+    transform: scale(1) !important;
+    /* min-height: 100vh; */
+    height: 650px !important;
   }
 
   .app__projects {
-      transform: scale(1) !important;
-      /* min-height: 100vh; */
-      height: 900px !important;
-      margin-bottom: -200px !important;
+    transform: scale(1) !important;
+    /* min-height: 100vh; */
+    height: 900px !important;
+    margin-bottom: -200px !important;
   }
 
   .personal__textBox:last-child {
-      margin-right: 0px !important;
+    margin-right: 0px !important;
+  }
+
+  .smallScreenAdvice {
+    display: block !important;
+    margin-left: 50% !important;
+    width: calc(50% - 156px) !important;
+    transform: scale(0.8) translateY(50px) !important;
   }
 }
-
-
-
-
-
-
 
 @media screen and (max-width: 1700px) {
   .navigationSection__hider {
     opacity: 0 !important;
-    transition: .3s;
+    transition: 0.3s;
   }
 }
 
 @media screen and (max-width: 1600px) {
   .navigationSection__hider {
     opacity: 0 !important;
-    transition: .3s;
+    transition: 0.3s;
   }
 
   .greeting__graph {
-      margin-left: 100px;
-      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-130px) scale(.75) !important;
+    margin-left: 100px;
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-130px) scale(0.75) !important;
   }
 
   .doughnut__heading {
-    transform: scale(.7);
+    transform: scale(0.7);
   }
 
   .projects__projectGallery {
@@ -185,7 +198,6 @@ a {
 }
 
 @media screen and (max-width: 1450px) {
-  
   .doughnut__heading {
     font-size: 36px !important;
   }
@@ -199,18 +211,19 @@ a {
   }
 
   .greeting__graph {
-    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-90px) scale(.75) !important;
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-90px) scale(0.75) !important;
   }
 
   .personal__textBox {
-    transform: scale(.75) !important;
+    transform: scale(0.75) !important;
   }
 
-  
+  .app__navigationSection {
+    z-index: 5 !important;
+  }
 }
 
 @media screen and (max-width: 1260px) {
-  
   .doughnut__heading {
     width: 400px !important;
     margin-right: 100px !important;
@@ -226,10 +239,15 @@ a {
     /* line-height: 100px !important; */
   }
 
+  .smallScreenAdvice {
+    width: 312px !important;
+    margin-left: 100px !important;
+    /* margin-right: 0px !important; */
+    transform: scale(0.8) translateY(50px) !important;
+  }
 }
 
 @media screen and (max-width: 1150px) {
-  
   body {
     overflow: auto;
     overflow-x: hidden;
@@ -270,23 +288,23 @@ a {
   }
 
   .app__greeting {
-      /* min-height: 100vh; */
-      height: 650px !important;
+    /* min-height: 100vh; */
+    height: 650px !important;
   }
 
   .greeting__graph {
-      transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-90px) scale(.75) !important;
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-90px) scale(0.75) !important;
   }
 
   .app__personal {
-      transform: scale(1) !important;
-      /* min-height: 100vh; */
-      height: 900px !important;
-      margin-top: 50px !important;
+    transform: scale(1) !important;
+    /* min-height: 100vh; */
+    height: 900px !important;
+    margin-top: 50px !important;
   }
 
   .personal__textBox:last-child {
-      margin-right: 0px !important;
+    margin-right: 0px !important;
   }
 
   .personal__isometricBackground {
@@ -295,20 +313,27 @@ a {
 
   .app__personalWrapperBox {
     height: 600px !important;
-  } 
+  }
 
   .app__projects {
-    transform: scale(.8) !important;
+    transform: scale(0.8) !important;
     height: 600px !important;
     min-height: 600px !important;
     margin-top: 200px;
+  }
+
+  .smallScreenAdvice {
+    display: block !important;
+    width: 312px !important;
+    margin-left: 36px !important;
+    transform: scale(0.8) translateY(50px) !important;
   }
 }
 
 @media screen and (max-width: 968px) {
   .app__greeting {
     flex-wrap: wrap !important;
-    height: 1050px !important;
+    height: 1250px !important;
   }
 
   .greeting__isometricTextBox {
@@ -338,6 +363,7 @@ a {
   }
 
   .greeting__graph {
+    height: 1100px !important;
     margin-left: 0px !important;
     order: 2 !important;
   }
@@ -380,22 +406,21 @@ a {
 
   .projects__projectsList {
     flex-wrap: wrap;
-    
   }
 
   .projects__projectStatus {
-    transform: scale(.7) !important;
+    transform: scale(0.7) !important;
     margin-left: -45px;
   }
 
   .projects__projectTechs {
     width: 300px;
-    justify-content: center !important;
+    /* justify-content: center !important; */
   }
 
   .projects__projectGallery {
     width: 300px !important;
-    position: absolute !important; 
+    position: absolute !important;
     left: 0 !important;
     bottom: -400px !important;
   }
@@ -405,7 +430,7 @@ a {
     margin-left: -260px !important;
   }
 
-  .projects__wrapper .projects__projectsGalleryControllerWrapper  {
+  .projects__wrapper .projects__projectsGalleryControllerWrapper {
     right: 250px !important;
     bottom: -150px !important;
   }
@@ -421,20 +446,34 @@ a {
   }
 
   .projects__projectLink {
-    bottom: -150px !important;
-    left: 0px !important;
+    bottom: 650px !important;
+    left: -135px !important;
   }
 
-  .projects__projectStatus {  
+  .projects__projectLinkText {
+    bottom: 628px !important;
+    left: -145px !important;
+  }
+
+  .projects__projectStatus {
     margin-left: -50px !important;
   }
 
+  .smallScreenAdvice {
+    display: block !important;
+    margin-left: calc(50% - 156px) !important;
+    transform: scale(0.8) translateY(80px) !important;
+  }
+
+  .projectsList__blockName {
+    width: 300px !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .app__greeting {
     /* min-height: 800px !important; */
-    height: 800px !important;
+    height: 1000px !important;
   }
 
   .doughnut__heading {
@@ -453,8 +492,9 @@ a {
   }
 
   .greeting__graph {
+    height: 800px !important;
     margin-top: 50px !important;
-    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-200px) scale(.55) !important;
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-200px) scale(0.55) !important;
   }
 
   .personal__isometricBackground {
@@ -474,20 +514,25 @@ a {
     width: 300px;
   }
 
+  .smallScreenAdvice {
+    display: block !important;
+    margin-left: calc(50% - 156px) !important;
+    transform: scale(0.7) translateY(0px) !important;
+  }
 
-
-  
+  .cursorWrapper {
+    display: none !important;
+  }
 }
 
 @media screen and (max-width: 400px) {
-
   .app {
     width: 90%;
     margin-left: 4%;
   }
 
   .app__greeting {
-    height: 700px !important;
+    height: 950px !important;
   }
 
   .doughnut__heading {
@@ -504,7 +549,7 @@ a {
   }
 
   .greeting__graph {
-    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-200px) scale(.45) !important;
+    transform: perspective(10000px) rotateX(0deg) skewY(15deg) translateY(-200px) scale(0.45) !important;
   }
 
   .app__personalWrapperBox {
@@ -518,11 +563,11 @@ a {
 
   .personal__textBox {
     height: 650px !important;
-    transform: scale(.7) !important;
+    transform: scale(0.7) !important;
   }
-  
+
   .app__projects {
-    transform: scale(.7) !important;
+    transform: scale(0.7) !important;
     height: 700px !important;
     min-height: 700px !important;
   }
@@ -547,7 +592,7 @@ a {
     left: -20px !important;
   } */
 
-  .projects__wrapper .projects__projectsGalleryControllerWrapper  {
+  .projects__wrapper .projects__projectsGalleryControllerWrapper {
     right: 170px !important;
   }
 
@@ -561,5 +606,15 @@ a {
 
   .projects__projectGallery {
     margin-left: 0px !important;
+  }
+
+  .projects__projectLink {
+    bottom: 670px !important;
+    left: -115px !important;
+  }
+
+  .projects__projectLinkText {
+    bottom: 648px !important;
+    left: -125px !important;
   }
 }
