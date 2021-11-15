@@ -1,55 +1,53 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, { useState, useEffect, useRef } from 'react';
 import './PersonalSection.css';
-import PersonalIsometricPlayground from "./PersonalIsometricPlayground";
+import PersonalIsometricPlayground from './PersonalIsometricPlayground';
 
 function PersonalSection() {
+  const [scrollPosition, setScrollPosition] = useState(0);
+  const [windowHeight, setWindowHeight] = useState(0);
 
-    const [scrollPosition, setScrollPosition] = useState(0);
-    const [windowHeight, setWindowHeight] = useState(0);
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
 
-    const handleScroll = () => {
-        const position = window.pageYOffset;
-        setScrollPosition(position);
+  const handleResize = () => {
+    const height = window.innerHeight;
+    setWindowHeight(height);
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', handleResize, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    handleResize();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
+  }, []);
 
-    const handleResize = () => {
-        const height = window.innerHeight;
-        setWindowHeight(height);
-    };
+  return (
+    <div className="app__personalWrapperBox">
+      <div
+        className="app__personalWrapper"
+        style={{
+          transform: 'translateX(150vw) translateY(150vh) translateZ(-10000px)',
+          transition: '1s',
+        }}
+      >
+        <section className="app__personal personal">
+          <div
+            className="personal__awesomeBackground"
+            // style={{opacity: scrollPosition > (windowHeight / 2) ? '1' : '0'}}
+          ></div>
 
-    useEffect(() => {
-
-        window.addEventListener('resize', handleResize, { passive: true });
-        window.addEventListener('scroll', handleScroll, { passive: true });
-
-        handleResize();
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-            window.removeEventListener('resize', handleResize);
-        };
-    }, []);
-
-    return (
-        <div className='app__personalWrapperBox'>
-        <div className='app__personalWrapper' style={{transform: 'translateX(150vw) translateY(150vh) translateZ(-10000px)', transition: '1s'}}>
-        <section className='app__personal personal' >
-
-            <div className='personal__awesomeBackground' 
-                // style={{opacity: scrollPosition > (windowHeight / 2) ? '1' : '0'}}
-            >
-            </div>
-
-            <PersonalIsometricPlayground />
-
-            
-            
-
+          <PersonalIsometricPlayground />
         </section>
-        </div>
-        </div>
-    );
-
+      </div>
+    </div>
+  );
 }
 
 export default PersonalSection;

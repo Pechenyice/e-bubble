@@ -1,23 +1,23 @@
 .heading {
-    position: relative;
-    width: 300px;
+  position: relative;
+  width: 300px;
 }
 
 .heading__decorator {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #9A1AFF 0%, #E864CB 100%);
-    border-radius: 25px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #9a1aff 0%, #e864cb 100%);
+  border-radius: 25px;
 }
 
 h2 {
-    font-size: 36px;
-    font-style: normal;
-    font-weight: normal;
-    line-height: 52px;
-    margin-left: 24px;
-    letter-spacing: 0.03em;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 52px;
+  margin-left: 24px;
+  letter-spacing: 0.03em;
 }
